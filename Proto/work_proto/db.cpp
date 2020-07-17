@@ -42,6 +42,76 @@ QString Login::get_patronymic() {return patronymic;}
 bool Login::check_login_pass(QString login, QString pass)
 {
     QSqlQuery query;
-    query.exec(QString("select id, name, surname, patronymic from login where (login = %1 and password = %2);").arg(login,pass));
+    query.exec(QString("select id, name, surname, patronymic from login where (login = '%1' and password = '%2');").arg(login,pass));
     return query.next();
 }
+
+Citizen::Citizen(int id)
+{
+    QSqlQuery query;
+    query.exec(QString(
+                   "select id, name, surname,"
+                   "patronymic, status, position,"
+                   "in_date, out_date,"
+                   "telephone, mail, citizen_room.number "
+                   "from citizen_room "
+                   "inner join room on room.number = citizen_room.number "
+                   "inner join building on room.building = building.id "
+                   "inner join citizen on citizen_room.citizen = citizen.id "
+                   "where citizen = %1;"
+                   ).arg(QString::number(id)));
+    query.next();
+    this->id = query.value(0).toInt();
+    this->name = query.value(1).toString();
+    this->surname = query.value(2).toString();
+    this->patronymic = query.value(3).toString();
+    this->status = query.value(4).toBool();
+    this->position = query.value(5).toString();
+    this->in_date = query.value(6).toString();
+    this->out_date = query.value(7).toString();
+    this->telephone = query.value(8).toString();
+    this->mail = query.value(9).toString();
+}
+
+QList<Citizen> search(QString name, QString surname, QString patronymic)
+{
+    QSqlQuery query;
+    query.exec(QString("select id from citizen where name like '%%1' and surname like '%%2' and patronymic like '%%3';").
+               arg(name, surname, patronymic));
+    QList<Citizen> result;
+    while(query.next())
+    {
+        result.push_back(Citizen(query.value(0).toInt()));
+    }
+    return result;
+}
+
+QSqlQueryModel* get_table_cojitel(QList<Citizen> citizens, QWidget* parent) // возвращает всех сожителей по комнате
+{
+    QSqlQueryModel *model = new QSqlQueryModel(parent);
+    QString query = "";
+    for (int i = 0; i < citizens.size(); ++i)
+    {
+        query += QString( "select building.id, room.name, "
+                "(building.place_in_room - (select count(*) from citizen_room "
+                "inner join room on room.number = citizen_room.number "
+                "inner join building on room.building = building.id "
+                "group by citizen_room.number)) places, "
+                "citizen.surname, citizen.name, citizen.patronymic, "
+                "citizen.status, citizen.position, citizen.in_date, citizen.out_date, citizen.telephone, "
+                "citizen.mail from citizen_room "
+                "inner join room on room.number = citizen_room.number "
+                "inner join building on room.building = building.id "
+                "inner join citizen on citizen_room.citizen = citizen.id "
+                "where citizen_room.citizen = %1 ").arg(QString::number(citizens[i].id));
+        if (i != citizens.size() - 1)
+        {
+            query += "union ";
+        }
+    }
+    query += "order by room.name; ";
+    QSqlQuery *q = new QSqlQuery(query);
+    model->setQuery(*q);
+    return model;
+}
+

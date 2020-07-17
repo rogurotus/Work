@@ -1,6 +1,7 @@
 #ifndef DB_H
 #define DB_H
 
+#include <QWidget>
 #include <qsqlrelationaltablemodel.h>
 
 
@@ -45,6 +46,31 @@ private:
     QSqlDatabase *db;
     Login login;
 };
+
+class Citizen
+{
+
+public:
+    explicit Citizen(int id);
+    ~Citizen();
+    int id;
+    QString name;
+    QString surname;
+    QString patronymic;
+    bool status;
+    QString position;
+    QString in_date;
+    QString out_date;
+    QString telephone;
+    QString mail;
+    QString room;
+
+    static QList<Citizen> search(QString name, QString surname, QString patronymic);
+    static QSqlQueryModel* get_cojitel(QList<Citizen> citizens, QWidget* parent);
+    //static QSqlRelationalTableModel
+};
+
+
 
 
 
