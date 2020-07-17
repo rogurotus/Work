@@ -1,5 +1,6 @@
 #include "seekbyname.h"
 #include "ui_seekbyname.h"
+#include "db.h"
 
 SeekByName::SeekByName(QWidget *parent) :
     QWidget(parent),
@@ -11,4 +12,10 @@ SeekByName::SeekByName(QWidget *parent) :
 SeekByName::~SeekByName()
 {
     delete ui;
+}
+
+void SeekByName::on_pushButton_clicked()
+{
+    auto citizens = Citizen::search(ui->lineEdit_2->text(), ui->lineEdit->text(), ui->lineEdit_3->text());
+    ui->tableView->setModel(Citizen::get_cojitel(citizens, this));
 }

@@ -14,10 +14,6 @@ namespace Ui
 class Login
 {
 
-    explicit Login(QString login, QString pass);
-    ~Login();
-    bool check_login_pass(QString login, QString pass);
-
 private:
     int id;
     QString address;
@@ -26,6 +22,9 @@ private:
     QString patronymic;
 
 public:
+    explicit Login(QString login, QString pass);
+    ~Login();
+    static bool check_login_pass(QString login, QString pass);
     Login();
     int get_id();
     QString get_address();
@@ -40,6 +39,7 @@ class DB
 public:
     explicit DB();
     ~DB();
+    void set_login(Login login);
 
 private:
     static QSqlDatabase *_db;
@@ -63,7 +63,7 @@ public:
     QString out_date;
     QString telephone;
     QString mail;
-    QString room;
+    int room;
 
     static QList<Citizen> search(QString name, QString surname, QString patronymic);
     static QSqlQueryModel* get_cojitel(QList<Citizen> citizens, QWidget* parent);

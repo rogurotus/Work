@@ -1,11 +1,13 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "QDebug"
+#include "db.h"
 
 #include <QSqlQuery>
 #include <QSqlRelationalDelegate>
+#include <qmessagebox.h>
 
-static QSqlDatabase db;
+static DB db;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -30,7 +32,7 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::on_pushButton_clicked()
 {
-    if(ui->lineEdit->text().length() == 0)
+    if(ui->login_edit->text().length() == 0)
         {
             ui->label->setStyleSheet("color: rgb(200, 0, 0)");
             ui->label->setText("Введите логин!!!");
@@ -47,10 +49,19 @@ void MainWindow::on_pushButton_clicked()
             }
             else
             {
-                //Поиск учетной записи, если успех то вход в активность. Иначе вывод сообщения
-                maincomendant = new MainComendant;
-                maincomendant->show();
-                this->close();
+                if(Login::check_login_pass(ui->login_edit->text(), ui->lineEdit_2->text()))
+                {
+                    // инициализая db.login
+                    db.set_login(Login(ui->login_edit->text(), ui->lineEdit_2->text()));
+                    maincomendant = new MainComendant;
+                    maincomendant->show();
+                    this->close();
+                }
+                else
+                {
+                    QMessageBox::information(NULL,QObject::tr("Важно!"),tr("Неверный логин или пароль"));
+                }
+
             }
         }
 }

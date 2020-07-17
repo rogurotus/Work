@@ -15,6 +15,9 @@ public:
     explicit SeekByName(QWidget *parent = nullptr);
     ~SeekByName();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::SeekByName *ui;
 };

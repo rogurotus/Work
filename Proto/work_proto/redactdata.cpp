@@ -16,9 +16,12 @@ RedactData::~RedactData()
 void RedactData::on_pushButton_clicked()
 {
     //Ввод данных
+    // функия в бд и в Maincomendant
+    this->close();
 }
 
 void RedactData::on_pushButton_2_clicked()
 {
     this->close();
 }
+

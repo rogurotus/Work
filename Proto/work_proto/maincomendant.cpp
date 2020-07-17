@@ -10,6 +10,8 @@ MainComendant::MainComendant(QWidget *parent) :
 
     QDate cDate = QDate::currentDate();
     ui->label->setText("Комендант: Главная " + cDate.toString());
+
+    // заполнение ui из бд
 }
 
 MainComendant::~MainComendant()
