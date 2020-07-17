@@ -20,6 +20,9 @@ public:
     explicit MainComendant(QWidget *parent = nullptr);
     ~MainComendant();
 
+public slots:
+    void update(bool);
+
 private slots:
     void on_action_triggered();
 

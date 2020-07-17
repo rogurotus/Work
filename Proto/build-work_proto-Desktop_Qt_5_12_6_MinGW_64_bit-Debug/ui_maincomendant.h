@@ -41,7 +41,7 @@ public:
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer_4;
     QVBoxLayout *verticalLayout;
-    QGroupBox *groupBox;
+    QGroupBox *groupbox;
     QVBoxLayout *verticalLayout_4;
     QLabel *label_2;
     QLabel *label_3;
@@ -96,16 +96,16 @@ public:
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        groupBox = new QGroupBox(centralwidget);
-        groupBox->setObjectName(QString::fromUtf8("groupBox"));
+        groupbox = new QGroupBox(centralwidget);
+        groupbox->setObjectName(QString::fromUtf8("groupbox"));
         QFont font;
         font.setPointSize(14);
         font.setBold(true);
         font.setWeight(75);
-        groupBox->setFont(font);
-        verticalLayout_4 = new QVBoxLayout(groupBox);
+        groupbox->setFont(font);
+        verticalLayout_4 = new QVBoxLayout(groupbox);
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
-        label_2 = new QLabel(groupBox);
+        label_2 = new QLabel(groupbox);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         QFont font1;
         font1.setPointSize(12);
@@ -115,7 +115,7 @@ public:
 
         verticalLayout_4->addWidget(label_2);
 
-        label_3 = new QLabel(groupBox);
+        label_3 = new QLabel(groupbox);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setFont(font1);
 
@@ -125,7 +125,7 @@ public:
 
         verticalLayout_4->addItem(verticalSpacer);
 
-        label_4 = new QLabel(groupBox);
+        label_4 = new QLabel(groupbox);
         label_4->setObjectName(QString::fromUtf8("label_4"));
         QFont font2;
         font2.setPointSize(12);
@@ -135,13 +135,13 @@ public:
 
         verticalLayout_4->addWidget(label_4);
 
-        label_5 = new QLabel(groupBox);
+        label_5 = new QLabel(groupbox);
         label_5->setObjectName(QString::fromUtf8("label_5"));
         label_5->setFont(font1);
 
         verticalLayout_4->addWidget(label_5);
 
-        label_6 = new QLabel(groupBox);
+        label_6 = new QLabel(groupbox);
         label_6->setObjectName(QString::fromUtf8("label_6"));
         label_6->setFont(font1);
 
@@ -151,26 +151,26 @@ public:
 
         verticalLayout_4->addItem(verticalSpacer_2);
 
-        label_7 = new QLabel(groupBox);
+        label_7 = new QLabel(groupbox);
         label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setFont(font2);
 
         verticalLayout_4->addWidget(label_7);
 
-        label_8 = new QLabel(groupBox);
+        label_8 = new QLabel(groupbox);
         label_8->setObjectName(QString::fromUtf8("label_8"));
         label_8->setFont(font1);
 
         verticalLayout_4->addWidget(label_8);
 
-        label_9 = new QLabel(groupBox);
+        label_9 = new QLabel(groupbox);
         label_9->setObjectName(QString::fromUtf8("label_9"));
         label_9->setFont(font1);
 
         verticalLayout_4->addWidget(label_9);
 
 
-        verticalLayout->addWidget(groupBox);
+        verticalLayout->addWidget(groupbox);
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
@@ -250,7 +250,7 @@ public:
         action_5->setText(QApplication::translate("MainComendant", "\320\237\320\276\320\273\321\203\321\207\320\270\321\202\321\214 \320\270\320\275\321\204\320\276\321\200\320\274\320\260\321\206\320\270\321\216 \320\276 \320\272\320\276\320\274\320\275\320\260\321\202\320\265", nullptr));
         action_6->setText(QApplication::translate("MainComendant", "\320\237\320\276\320\273\321\203\321\207\320\270\321\202\321\214 \321\201\320\277\320\270\321\201\320\276\320\272 \320\277\321\200\320\276\320\266\320\270\320\262\320\260\321\216\321\211\320\270\321\205", nullptr));
         action_7->setText(QApplication::translate("MainComendant", "\320\237\320\276\320\273\321\203\321\207\320\270\321\202\321\214 \321\201\320\277\320\270\321\201\320\276\320\272 \320\267\320\260\321\217\320\262\320\276\320\272", nullptr));
-        groupBox->setTitle(QApplication::translate("MainComendant", "\320\236\320\261\321\211\320\265\320\266\320\270\321\202\320\270\320\265 \342\204\226 0", nullptr));
+        groupbox->setTitle(QApplication::translate("MainComendant", "\320\236\320\261\321\211\320\265\320\266\320\270\321\202\320\270\320\265 \342\204\226 0", nullptr));
         label_2->setText(QApplication::translate("MainComendant", "\320\220\320\264\321\200\320\265\321\201:", nullptr));
         label_3->setText(QApplication::translate("MainComendant", "\320\232\320\276\320\274\320\265\320\275\320\264\320\260\320\275\321\202: ", nullptr));
         label_4->setText(QApplication::translate("MainComendant", "\320\232\320\276\321\200\320\277\321\203\321\201 \342\204\226 0", nullptr));

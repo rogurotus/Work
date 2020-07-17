@@ -16,7 +16,7 @@ public:
     ~SeekByName();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_Enter_FIO_clicked();
 
 private:
     Ui::SeekByName *ui;

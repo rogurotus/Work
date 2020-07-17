@@ -17,6 +17,7 @@ void RedactData::on_pushButton_clicked()
 {
     //Ввод данных
     // функия в бд и в Maincomendant
+    emit redacted(true);
     this->close();
 }
 
