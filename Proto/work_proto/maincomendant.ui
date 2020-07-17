@@ -33,7 +33,7 @@
       <item>
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
-         <widget class="QGroupBox" name="groupBox">
+         <widget class="QGroupBox" name="groupbox">
           <property name="font">
            <font>
             <pointsize>14</pointsize>

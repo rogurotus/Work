@@ -69,5 +69,12 @@ void MainComendant::on_action_7_triggered()
 void MainComendant::on_pushButton_clicked()
 {
     redactData = new RedactData;
+
+    QObject::connect(redactData, SIGNAL(redacted(bool)), this, SLOT(update(bool)));
+
     redactData->show();
+}
+
+void MainComendant::update(bool){
+    ui->label->setText("AAAAAAAAAAAAAAAAAAAAAA");
 }

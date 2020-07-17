@@ -12,3 +12,8 @@ SeekByName::~SeekByName()
 {
     delete ui;
 }
+
+void SeekByName::on_Enter_FIO_clicked()
+{
+
+}

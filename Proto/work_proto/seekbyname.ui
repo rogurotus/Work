@@ -159,7 +159,7 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="Enter_FIO">
        <property name="text">
         <string>Ок</string>
        </property>

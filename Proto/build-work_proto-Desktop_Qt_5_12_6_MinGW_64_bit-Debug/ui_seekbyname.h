@@ -42,7 +42,7 @@ public:
     QSpacerItem *verticalSpacer_3;
     QHBoxLayout *horizontalLayout_4;
     QSpacerItem *horizontalSpacer_2;
-    QPushButton *pushButton;
+    QPushButton *Enter_FIO;
     QSpacerItem *horizontalSpacer;
     QSpacerItem *verticalSpacer_4;
     QTableView *tableView;
@@ -129,10 +129,10 @@ public:
 
         horizontalLayout_4->addItem(horizontalSpacer_2);
 
-        pushButton = new QPushButton(SeekByName);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        Enter_FIO = new QPushButton(SeekByName);
+        Enter_FIO->setObjectName(QString::fromUtf8("Enter_FIO"));
 
-        horizontalLayout_4->addWidget(pushButton);
+        horizontalLayout_4->addWidget(Enter_FIO);
 
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -172,7 +172,7 @@ public:
         lineEdit->setText(QString());
         label_3->setText(QApplication::translate("SeekByName", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\270\320\274\321\217", nullptr));
         label_4->setText(QApplication::translate("SeekByName", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\276\321\202\321\207\320\265\321\201\321\202\320\262\320\276", nullptr));
-        pushButton->setText(QApplication::translate("SeekByName", "\320\236\320\272", nullptr));
+        Enter_FIO->setText(QApplication::translate("SeekByName", "\320\236\320\272", nullptr));
         label_2->setText(QApplication::translate("SeekByName", "\320\232\320\276\320\274\320\265\320\275\320\264\320\260\320\275\321\202:", nullptr));
     } // retranslateUi
 

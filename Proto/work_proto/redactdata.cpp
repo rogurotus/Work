@@ -15,7 +15,8 @@ RedactData::~RedactData()
 
 void RedactData::on_pushButton_clicked()
 {
-    //Ввод данных
+    //Запись данных
+    emit redacted(true);
 }
 
 void RedactData::on_pushButton_2_clicked()

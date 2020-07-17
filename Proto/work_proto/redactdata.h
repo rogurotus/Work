@@ -15,6 +15,9 @@ public:
     explicit RedactData(QWidget *parent = nullptr);
     ~RedactData();
 
+signals:
+    void redacted(bool);
+
 private slots:
     void on_pushButton_clicked();
 
