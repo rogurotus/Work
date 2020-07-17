@@ -19,14 +19,38 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     db.cpp \
     main.cpp \
-    mainwindow.cpp
+    maincomendant.cpp \
+    mainvisiter.cpp \
+    mainwindow.cpp \
+    makerequest.cpp \
+    managedatabase.cpp \
+    redactdata.cpp \
+    requests.cpp \
+    seekbyname.cpp \
+    view.cpp
 
 HEADERS += \
     db.h \
-    mainwindow.h
+    maincomendant.h \
+    mainvisiter.h \
+    mainwindow.h \
+    makerequest.h \
+    managedatabase.h \
+    redactdata.h \
+    requests.h \
+    seekbyname.h \
+    view.h
 
 FORMS += \
-    mainwindow.ui
+    maincomendant.ui \
+    mainvisiter.ui \
+    mainwindow.ui \
+    makerequest.ui \
+    managedatabase.ui \
+    redactdata.ui \
+    requests.ui \
+    seekbyname.ui \
+    view.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

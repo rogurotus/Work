@@ -12,30 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("..\\work.db");
-    db.open();
-    if(db.isOpen())
-    {
-        for(int i = 1; i < 10; ++i)
-        {
-            int status = 0;
-            if(i % 5 == 0)
-            {
-                status = 1;
-            }
-            QSqlQuery query;
-            query.exec("insert into citizen"
-                       "(name, surname, patronymic, status, position, in_date, out_date, telephone, mail )"
-                       "values ('Имя " + QString::number(i) + "', 'Фамилия " + QString::number(i)
-                       + "', 'Отчество" + QString::number(i) + "'," + QString::number(status)
-                       + ", 'Должность', '2020-07-15', '2020-08-" + QString::number(i + 1) + "', '0000000000', 'Мыло'" + ")");
-        }
-
-        qDebug() << endl << "good" << endl;
-    }
-
-
+    ui->lineEdit_2->setEchoMode(QLineEdit::Password);
 }
 
 MainWindow::~MainWindow()
@@ -43,3 +20,37 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    mainvisiter = new MainVisiter;
+    mainvisiter->show();
+    this->close();
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    if(ui->lineEdit->text().length() == 0)
+        {
+            ui->label->setStyleSheet("color: rgb(200, 0, 0)");
+            ui->label->setText("Введите логин!!!");
+        }
+        else
+        {
+            ui->label->setStyleSheet("color: rgb(0, 0, 0)");
+            ui->label->setText("Введите логин");
+
+            if(ui->lineEdit_2->text().length() == 0)
+            {
+                ui->label_2->setStyleSheet("color: rgb(200, 0, 0)");
+                ui->label_2->setText("Введите пароль!!!");
+            }
+            else
+            {
+                //Поиск учетной записи, если успех то вход в активность. Иначе вывод сообщения
+                maincomendant = new MainComendant;
+                maincomendant->show();
+                this->close();
+            }
+        }
+}
