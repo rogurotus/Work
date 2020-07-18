@@ -2,6 +2,7 @@
 #define MANAGEDATABASE_H
 
 #include <QWidget>
+#include <redacthuman.h>
 
 namespace Ui {
 class ManageDatabase;
@@ -15,13 +16,19 @@ public:
     explicit ManageDatabase(QWidget *parent = nullptr);
     ~ManageDatabase();
 
+public slots:
+    void update_human(bool);
+
 private slots:
     void on_pushButton_clicked();
 
     void on_pushButton_2_clicked();
 
+    void on_redact_button_clicked();
+
 private:
     Ui::ManageDatabase *ui;
+    RedactHuman * redactHuman;
 };
 
 #endif // MANAGEDATABASE_H
