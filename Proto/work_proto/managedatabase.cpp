@@ -33,3 +33,18 @@ void ManageDatabase::set_model(QSqlRelationalTableModel* model)
     this->model = model;
     ui->tableView->setModel(model);
 }
+
+void ManageDatabase::on_redact_button_clicked()
+{
+    //Редактирование
+    redactHuman = new RedactHuman;
+
+    QObject::connect(redactHuman, SIGNAL(redacted_human(bool)), this, SLOT(update_human(bool)));
+
+    redactHuman->show();
+}
+
+void ManageDatabase::update_human(bool){
+    //Обновление
+    ui->state_label->setText("AAAAAAAAAAAAAAAAAAAAAAAA");
+}

@@ -25,6 +25,7 @@ SOURCES += \
     makerequest.cpp \
     managedatabase.cpp \
     redactdata.cpp \
+    redacthuman.cpp \
     requests.cpp \
     seekbyname.cpp \
     view.cpp
@@ -37,6 +38,7 @@ HEADERS += \
     makerequest.h \
     managedatabase.h \
     redactdata.h \
+    redacthuman.h \
     requests.h \
     seekbyname.h \
     view.h
@@ -48,6 +50,7 @@ FORMS += \
     makerequest.ui \
     managedatabase.ui \
     redactdata.ui \
+    redacthuman.ui \
     requests.ui \
     seekbyname.ui \
     view.ui
