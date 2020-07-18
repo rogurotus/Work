@@ -1,0 +1,1 @@
+javaw -Xms256m -cp * com.osrmt.appclient.reqmanager.RequirementManagerController
