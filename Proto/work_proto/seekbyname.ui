@@ -19,7 +19,7 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QLabel" name="label">
+        <widget class="QLabel" name="surname_label">
          <property name="minimumSize">
           <size>
            <width>100</width>
@@ -32,7 +32,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit">
+        <widget class="QLineEdit" name="surname_edit">
          <property name="minimumSize">
           <size>
            <width>200</width>
@@ -65,7 +65,7 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <widget class="QLabel" name="label_3">
+        <widget class="QLabel" name="name_label">
          <property name="minimumSize">
           <size>
            <width>100</width>
@@ -78,7 +78,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_2">
+        <widget class="QLineEdit" name="name_edit">
          <property name="minimumSize">
           <size>
            <width>70</width>
@@ -108,7 +108,7 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
-        <widget class="QLabel" name="label_4">
+        <widget class="QLabel" name="patronymic_label">
          <property name="minimumSize">
           <size>
            <width>100</width>
@@ -121,7 +121,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_3"/>
+        <widget class="QLineEdit" name="patronymic_edit"/>
        </item>
       </layout>
      </item>
@@ -216,7 +216,7 @@
     </spacer>
    </item>
    <item>
-    <widget class="QLabel" name="label_2">
+    <widget class="QLabel" name="state_label">
      <property name="text">
       <string>Комендант:</string>
      </property>

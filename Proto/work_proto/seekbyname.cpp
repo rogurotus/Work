@@ -15,5 +15,5 @@ SeekByName::~SeekByName()
 
 void SeekByName::on_Enter_FIO_clicked()
 {
-
+    //Ввод данных
 }

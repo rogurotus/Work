@@ -9,7 +9,7 @@ MainComendant::MainComendant(QWidget *parent) :
     ui->setupUi(this);
 
     QDate cDate = QDate::currentDate();
-    ui->label->setText("Комендант: Главная " + cDate.toString());
+    ui->state_label->setText("Комендант: Главная " + cDate.toString());
 }
 
 MainComendant::~MainComendant()
@@ -75,6 +75,7 @@ void MainComendant::on_pushButton_clicked()
     redactData->show();
 }
 
+//////////////////////////////////////////////Здесь обновление
 void MainComendant::update(bool){
-    ui->label->setText("AAAAAAAAAAAAAAAAAAAAAA");
+    ui->state_label->setText("AAAAAAAAAAAAAAAAAAAAAA");
 }
