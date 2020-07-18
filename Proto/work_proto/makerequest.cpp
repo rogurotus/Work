@@ -10,7 +10,7 @@ MakeRequest::MakeRequest(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->lineEdit_5->setInputMask("[8]-(999)-999-99-99");
+    ui->phone_edit->setInputMask("[8]-(999)-999-99-99");
 }
 
 MakeRequest::~MakeRequest()
@@ -22,14 +22,12 @@ void MakeRequest::on_pushButton_clicked()
 {
     //QDate cDate = QDate::currentDate(); //Возвращает дату заявки
 
-    if(ui->lineEdit->text().length() != 0 &&
-       ui->lineEdit_2->text().length() != 0 &&
-       ui->lineEdit_3->text().length() != 0 &&
-       ui->lineEdit_4->text().length() != 0 &&
-       ui->lineEdit_5->text().length() != 0 &&
-       ui->lineEdit_6->text().length() != 0 &&
-      (ui->radioButton->isChecked() || ui->radioButton_2->isChecked()))
-
+    if(ui->surname_edit->text().length() != 0 &&
+            ui->name_edit->text().length() != 0 &&
+            ui->phone_edit->text().length() != 0 &&
+            ui->mail_edit->text().length() != 0 &&
+            ui->group_work_edit->text().length() != 0 &&
+            (ui->student_radio->isChecked() || ui->sotrudnik_radio->isChecked()))
     {
         //Желательно поразбираться с регулярными выражениями
         //При успехе - запись данных в бд

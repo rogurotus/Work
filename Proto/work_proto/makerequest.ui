@@ -27,37 +27,37 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="surname_label">
      <property name="text">
       <string>Введите фамилию</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="lineEdit"/>
+    <widget class="QLineEdit" name="surname_edit"/>
    </item>
    <item>
-    <widget class="QLabel" name="label_2">
+    <widget class="QLabel" name="name_label">
      <property name="text">
       <string>Введите имя</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="lineEdit_2"/>
+    <widget class="QLineEdit" name="name_edit"/>
    </item>
    <item>
-    <widget class="QLabel" name="label_3">
+    <widget class="QLabel" name="patronymic_label">
      <property name="text">
       <string>Введите отчество (при отсутствии можно опустить)</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="lineEdit_3"/>
+    <widget class="QLineEdit" name="patronymic_edit"/>
    </item>
    <item>
-    <widget class="QGroupBox" name="groupBox">
+    <widget class="QGroupBox" name="status_groupbox">
      <property name="minimumSize">
       <size>
        <width>0</width>
@@ -69,14 +69,14 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <widget class="QRadioButton" name="radioButton">
+       <widget class="QRadioButton" name="student_radio">
         <property name="text">
          <string>Студент</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QRadioButton" name="radioButton_2">
+       <widget class="QRadioButton" name="sotrudnik_radio">
         <property name="text">
          <string>Сотрудник</string>
         </property>
@@ -86,34 +86,34 @@
     </widget>
    </item>
    <item>
-    <widget class="QLabel" name="label_4">
+    <widget class="QLabel" name="group_work_label">
      <property name="text">
       <string>Если вы студент, укажите вашу группу. Если вы сотрудник, укажите вашу должность.</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="lineEdit_4"/>
+    <widget class="QLineEdit" name="group_work_edit"/>
    </item>
    <item>
-    <widget class="QLabel" name="label_5">
+    <widget class="QLabel" name="phone_label">
      <property name="text">
       <string>Укажите ваш номер телефона</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="lineEdit_5"/>
+    <widget class="QLineEdit" name="phone_edit"/>
    </item>
    <item>
-    <widget class="QLabel" name="label_6">
+    <widget class="QLabel" name="mail_label">
      <property name="text">
       <string>Укажите ваш адрес элемтронной почты</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="lineEdit_6"/>
+    <widget class="QLineEdit" name="mail_edit"/>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">

@@ -12,9 +12,7 @@ MainComendant::MainComendant(QWidget *parent) :
     ui->setupUi(this);
 
     QDate cDate = QDate::currentDate();
-    ui->label->setText("Комендант: Главная " + cDate.toString());
-
-    // заполнение ui из бд
+    ui->state_label->setText("Комендант: Главная " + cDate.toString());
 }
 
 MainComendant::~MainComendant()
@@ -131,6 +129,7 @@ void MainComendant::on_pushButton_clicked()
     redactData->show();
 }
 
+//////////////////////////////////////////////Здесь обновление
 void MainComendant::update(bool){
     DB db;
     QSqlQuery dormitory(QString("select * from dormitory "

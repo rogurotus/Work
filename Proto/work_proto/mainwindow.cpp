@@ -14,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->lineEdit_2->setEchoMode(QLineEdit::Password);
+    ui->password_edit->setEchoMode(QLineEdit::Password);
 }
 
 MainWindow::~MainWindow()
@@ -34,18 +34,18 @@ void MainWindow::on_pushButton_clicked()
 {
     if(ui->login_edit->text().length() == 0)
         {
-            ui->label->setStyleSheet("color: rgb(200, 0, 0)");
-            ui->label->setText("Введите логин!!!");
+            ui->login_label->setStyleSheet("color: rgb(200, 0, 0)");
+            ui->login_label->setText("Введите логин!!!");
         }
         else
         {
-            ui->label->setStyleSheet("color: rgb(0, 0, 0)");
-            ui->label->setText("Введите логин");
+            ui->login_label->setStyleSheet("color: rgb(0, 0, 0)");
+            ui->login_label->setText("Введите логин");
 
-            if(ui->lineEdit_2->text().length() == 0)
+            if(ui->password_edit->text().length() == 0)
             {
-                ui->label_2->setStyleSheet("color: rgb(200, 0, 0)");
-                ui->label_2->setText("Введите пароль!!!");
+                ui->password_label->setStyleSheet("color: rgb(200, 0, 0)");
+                ui->password_label->setText("Введите пароль!!!");
             }
             else
             {

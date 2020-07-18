@@ -9,7 +9,7 @@ MainVisiter::MainVisiter(QWidget *parent) :
     ui->setupUi(this);
 
     QDate cDate = QDate::currentDate();
-    ui->label->setText("Гость: Главная " + cDate.toString());
+    ui->state_label->setText("Гость: Главная " + cDate.toString());
 }
 
 MainVisiter::~MainVisiter()

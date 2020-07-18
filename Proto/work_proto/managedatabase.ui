@@ -91,7 +91,7 @@
     </layout>
    </item>
    <item>
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="state_label">
      <property name="text">
       <string>Комендант:</string>
      </property>

@@ -73,6 +73,7 @@ void RedactData::on_pushButton_clicked()
 
 void RedactData::on_pushButton_2_clicked()
 {
+    //Отмена
     this->close();
 }
 
