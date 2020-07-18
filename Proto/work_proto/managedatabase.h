@@ -2,6 +2,7 @@
 #define MANAGEDATABASE_H
 
 #include <QWidget>
+#include <qsqltablemodel.h>
 
 namespace Ui {
 class ManageDatabase;
@@ -14,6 +15,7 @@ class ManageDatabase : public QWidget
 public:
     explicit ManageDatabase(QWidget *parent = nullptr);
     ~ManageDatabase();
+    void set_model(QSqlTableModel* model);
 
 private slots:
     void on_pushButton_clicked();
@@ -22,6 +24,7 @@ private slots:
 
 private:
     Ui::ManageDatabase *ui;
+    QSqlTableModel *model;
 };
 
 #endif // MANAGEDATABASE_H

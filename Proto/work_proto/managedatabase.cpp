@@ -1,5 +1,6 @@
 #include "managedatabase.h"
 #include "ui_managedatabase.h"
+#include <QSqlTableModel>
 
 ManageDatabase::ManageDatabase(QWidget *parent) :
     QWidget(parent),
@@ -16,9 +17,19 @@ ManageDatabase::~ManageDatabase()
 void ManageDatabase::on_pushButton_clicked()
 {
     //Добавить
+    model->insertRows(model->rowCount(), 1, QModelIndex());
+    ui->tableView->update();
 }
 
 void ManageDatabase::on_pushButton_2_clicked()
 {
     //Удалить
+    QModelIndex currentDiscount  = ui->tableView->currentIndex();
+    model->removeRow(currentDiscount.row(),QModelIndex());
+}
+
+void ManageDatabase::set_model(QSqlTableModel* model)
+{
+    this->model = model;
+    ui->tableView->setModel(model);
 }

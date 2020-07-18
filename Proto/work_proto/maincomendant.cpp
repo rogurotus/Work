@@ -1,6 +1,9 @@
+#include "db.h"
 #include "maincomendant.h"
 #include "ui_maincomendant.h"
 #include <QDate>
+#include <qsqlquery.h>
+#include <QDebug>
 
 MainComendant::MainComendant(QWidget *parent) :
     QMainWindow(parent),
@@ -23,6 +26,14 @@ void MainComendant::on_action_triggered()
 {
     //Добавить информацию о заселенных лицах
     manageDatabase = new ManageDatabase;
+    QSqlTableModel* model = new QSqlTableModel(manageDatabase);
+
+    /*
+    model->setTable("Больной_ф");
+    model->select();
+    */
+
+    manageDatabase->set_model(model);
     manageDatabase->show();
 }
 
@@ -37,6 +48,21 @@ void MainComendant::on_action_3_triggered()
 {
     //Получить список свободных мест
     view = new View;
+    QSqlQueryModel* model = new QSqlQueryModel(view);
+
+    QSqlQuery *q = new QSqlQuery(QString("select building.id, room.name, "
+                                         "(building.place_in_room) places from room "
+                                         "inner join building on building = building.id "
+                                         "except "
+                                         "select building.id, room.name, "
+                                         "(building.place_in_room) places from citizen_room "
+                                         "inner join room on room.number = citizen_room.number "
+                                         "inner join building on room.building = building.id "
+                                         "inner join citizen on citizen_room.citizen = citizen.id "
+                                         "order by building.id;"));
+
+    model->setQuery(*q);
+    view->set_model(model);
     view->show();
 }
 
@@ -44,6 +70,18 @@ void MainComendant::on_action_4_triggered()
 {
     //Получить список свободных комнат
     view = new View;
+    QSqlQueryModel* model = new QSqlQueryModel(view);
+    QSqlQuery *q = new QSqlQuery(QString("select building.id, room.name from room "
+                                         "inner join building on room.building = building.id "
+                                         "except "
+                                         "select building.id, room.name from citizen_room "
+                                         "inner join room on room.number = citizen_room.number "
+                                         "inner join building on room.building = building.id "
+                                         "inner join citizen on citizen_room.citizen = citizen.id "
+                                         "order by building.id;"));
+
+    model->setQuery(*q);
+    view->set_model(model);
     view->show();
 }
 
@@ -58,6 +96,22 @@ void MainComendant::on_action_6_triggered()
 {
     //Получить список проживающих
     view = new View;
+    QSqlQueryModel* model = new QSqlQueryModel(view);
+    QSqlQuery *q = new QSqlQuery(QString("select "
+                                         "(building.place_in_room - (select count(*) from citizen_room "
+                                         "inner join room on room.number = citizen_room.number "
+                                         "inner join building on room.building = building.id "
+                                         "group by citizen_room.number)) places, "
+                                         "citizen.surname, citizen.name, citizen.patronymic, "
+                                         "citizen.status, citizen.position, citizen.in_date, citizen.out_date, citizen.telephone, "
+                                         "citizen.mail from citizen_room "
+                                         "inner join room on room.number = citizen_room.number "
+                                         "inner join building on room.building = building.id "
+                                         "inner join citizen on citizen_room.citizen = citizen.id "
+                                         "where (out_date > date());"));
+
+    model->setQuery(*q);
+    view->set_model(model);
     view->show();
 }
 
@@ -78,5 +132,19 @@ void MainComendant::on_pushButton_clicked()
 }
 
 void MainComendant::update(bool){
-    ui->label->setText("AAAAAAAAAAAAAAAAAAAAAA");
+    DB db;
+    QSqlQuery dormitory(QString("select * from dormitory "
+                                "inner join login on manager = login.id "
+                                "where manager = %1;").
+                                arg(QString::number(db.login.get_id())));
+    dormitory.exec();
+    //раскидываем значения общаги
+
+
+    QSqlQuery building(QString("select * from dormitory_building "
+                               "inner join building on dormitory_building.building = building.id "
+                               "where dormitory = %1;").
+                                arg(QString::number(db.login.get_id())));
+    building.exec();
+    // раскидываем значения корпусов
 }

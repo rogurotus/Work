@@ -3,6 +3,7 @@
 #include <QDebug>
 
 QSqlDatabase *DB::_db;
+Login DB::login;
 
 DB::DB()
 {
@@ -19,11 +20,9 @@ DB::DB()
         db = _db;
     }
 }
-DB::~DB() {delete db;};
-
-void DB::set_login(Login login)
+DB::~DB()
 {
-    this->login = login;
+    if(!db) {delete db;}
 }
 
 Login::Login()
@@ -34,18 +33,19 @@ Login::~Login(){}
 Login::Login(QString login, QString pass)
 {
     QSqlQuery query;
-    query.exec(QString("select id, name, surname, patronymic from login where (login = %1 and password = %2);").arg(login,pass));
+    query.exec(QString("select login.id, name, surname, patronymic, dormitory.id "
+                       "from dormitory "
+                       "inner join login on manager = login.id "
+                       "where (login.login = '%1' and login.password = '%2');").arg(login,pass));
     query.next();
     this->id = query.value(0).toInt();
     this->name = query.value(1).toString();
     this->surname = query.value(2).toString();
     this->patronymic = query.value(3).toString();
+    this->dormitory = query.value(4).toInt();
 }
 int Login::get_id() {return id;}
-QString Login::get_address() {return address;}
-QString Login::get_name() {return name;}
-QString Login::get_surname() {return surname;}
-QString Login::get_patronymic() {return patronymic;}
+int Login::get_id_dormitory() {return dormitory;}
 
 bool Login::check_login_pass(QString login, QString pass)
 {
@@ -65,7 +65,6 @@ Citizen::Citizen(int id)
                 "inner join citizen on citizen_room.citizen = citizen.id "
                 "where citizen = %1;"
                 ).arg(QString::number(id));
-    qDebug() << q << endl;
     QSqlQuery query;
     query.exec(q);
     query.next();
@@ -87,7 +86,7 @@ Citizen::~Citizen() {}
 QList<Citizen> Citizen::search(QString name, QString surname, QString patronymic)
 {
     QSqlQuery query;
-    query.exec(QString("select id from citizen where name like '%%1' and surname like '%%2' and patronymic like '%%3';").
+    query.exec(QString("select id from citizen where name like '%1%' and surname like '%%2' and patronymic like '%%3';").
                arg(name, surname, patronymic));
     QList<Citizen> result;
     while(query.next())
@@ -102,7 +101,6 @@ QSqlQueryModel* Citizen::get_cojitel(QList<Citizen> citizens, QWidget* parent) /
     QSqlQueryModel *model = new QSqlQueryModel(parent);
     if(citizens.size() > 0)
     {
-        qDebug() << citizens[0].name << endl;
         QString query = "";
         for (int i = 0; i < citizens.size(); ++i)
         {
@@ -124,13 +122,9 @@ QSqlQueryModel* Citizen::get_cojitel(QList<Citizen> citizens, QWidget* parent) /
             }
         }
         query += "order by room.name; ";
-        qDebug() << endl << query;
         QSqlQuery *q = new QSqlQuery(query);
         model->setQuery(*q);
     }
-
-
-
     return model;
 }
 

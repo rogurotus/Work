@@ -52,7 +52,7 @@ void MainWindow::on_pushButton_clicked()
                 if(Login::check_login_pass(ui->login_edit->text(), ui->lineEdit_2->text()))
                 {
                     // инициализая db.login
-                    db.set_login(Login(ui->login_edit->text(), ui->lineEdit_2->text()));
+                    db.login = Login(ui->login_edit->text(), ui->lineEdit_2->text());
                     maincomendant = new MainComendant;
                     maincomendant->show();
                     this->close();

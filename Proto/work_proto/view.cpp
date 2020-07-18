@@ -12,3 +12,8 @@ View::~View()
 {
     delete ui;
 }
+
+void View::set_model(QSqlQueryModel *model)
+{
+    ui->tableView->setModel(model);
+}

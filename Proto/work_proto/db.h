@@ -16,10 +16,8 @@ class Login
 
 private:
     int id;
-    QString address;
-    QString name;
-    QString surname;
-    QString patronymic;
+
+    int dormitory;
 
 public:
     explicit Login(QString login, QString pass);
@@ -27,10 +25,11 @@ public:
     static bool check_login_pass(QString login, QString pass);
     Login();
     int get_id();
-    QString get_address();
-    QString get_name();
-    QString get_surname();
-    QString get_patronymic();
+    QString address;
+    QString name;
+    QString surname;
+    QString patronymic;
+    int get_id_dormitory();
 };
 
 class DB
@@ -39,12 +38,12 @@ class DB
 public:
     explicit DB();
     ~DB();
-    void set_login(Login login);
+    static Login login;
 
 private:
     static QSqlDatabase *_db;
     QSqlDatabase *db;
-    Login login;
+
 };
 
 class Citizen
