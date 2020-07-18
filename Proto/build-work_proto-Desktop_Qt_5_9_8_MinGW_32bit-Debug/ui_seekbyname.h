@@ -31,16 +31,16 @@ public:
     QVBoxLayout *verticalLayout_2;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
-    QLabel *label;
-    QLineEdit *lineEdit;
+    QLabel *surname_label;
+    QLineEdit *surname_edit;
     QSpacerItem *verticalSpacer;
     QHBoxLayout *horizontalLayout_2;
-    QLabel *label_3;
-    QLineEdit *lineEdit_2;
+    QLabel *name_label;
+    QLineEdit *name_edit;
     QSpacerItem *verticalSpacer_2;
     QHBoxLayout *horizontalLayout_3;
-    QLabel *label_4;
-    QLineEdit *lineEdit_3;
+    QLabel *patronymic_label;
+    QLineEdit *patronymic_edit;
     QSpacerItem *verticalSpacer_3;
     QHBoxLayout *horizontalLayout_4;
     QSpacerItem *horizontalSpacer_2;
@@ -49,7 +49,7 @@ public:
     QSpacerItem *verticalSpacer_4;
     QTableView *tableView;
     QSpacerItem *verticalSpacer_5;
-    QLabel *label_2;
+    QLabel *state_label;
 
     void setupUi(QWidget *SeekByName)
     {
@@ -62,17 +62,17 @@ public:
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        label = new QLabel(SeekByName);
-        label->setObjectName(QStringLiteral("label"));
-        label->setMinimumSize(QSize(100, 0));
+        surname_label = new QLabel(SeekByName);
+        surname_label->setObjectName(QStringLiteral("surname_label"));
+        surname_label->setMinimumSize(QSize(100, 0));
 
-        horizontalLayout->addWidget(label);
+        horizontalLayout->addWidget(surname_label);
 
-        lineEdit = new QLineEdit(SeekByName);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setMinimumSize(QSize(200, 0));
+        surname_edit = new QLineEdit(SeekByName);
+        surname_edit->setObjectName(QStringLiteral("surname_edit"));
+        surname_edit->setMinimumSize(QSize(200, 0));
 
-        horizontalLayout->addWidget(lineEdit);
+        horizontalLayout->addWidget(surname_edit);
 
 
         verticalLayout->addLayout(horizontalLayout);
@@ -83,17 +83,17 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        label_3 = new QLabel(SeekByName);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setMinimumSize(QSize(100, 0));
+        name_label = new QLabel(SeekByName);
+        name_label->setObjectName(QStringLiteral("name_label"));
+        name_label->setMinimumSize(QSize(100, 0));
 
-        horizontalLayout_2->addWidget(label_3);
+        horizontalLayout_2->addWidget(name_label);
 
-        lineEdit_2 = new QLineEdit(SeekByName);
-        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
-        lineEdit_2->setMinimumSize(QSize(70, 0));
+        name_edit = new QLineEdit(SeekByName);
+        name_edit->setObjectName(QStringLiteral("name_edit"));
+        name_edit->setMinimumSize(QSize(70, 0));
 
-        horizontalLayout_2->addWidget(lineEdit_2);
+        horizontalLayout_2->addWidget(name_edit);
 
 
         verticalLayout->addLayout(horizontalLayout_2);
@@ -104,16 +104,16 @@ public:
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        label_4 = new QLabel(SeekByName);
-        label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setMinimumSize(QSize(100, 0));
+        patronymic_label = new QLabel(SeekByName);
+        patronymic_label->setObjectName(QStringLiteral("patronymic_label"));
+        patronymic_label->setMinimumSize(QSize(100, 0));
 
-        horizontalLayout_3->addWidget(label_4);
+        horizontalLayout_3->addWidget(patronymic_label);
 
-        lineEdit_3 = new QLineEdit(SeekByName);
-        lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
+        patronymic_edit = new QLineEdit(SeekByName);
+        patronymic_edit->setObjectName(QStringLiteral("patronymic_edit"));
 
-        horizontalLayout_3->addWidget(lineEdit_3);
+        horizontalLayout_3->addWidget(patronymic_edit);
 
 
         verticalLayout->addLayout(horizontalLayout_3);
@@ -156,10 +156,10 @@ public:
 
         verticalLayout_2->addItem(verticalSpacer_5);
 
-        label_2 = new QLabel(SeekByName);
-        label_2->setObjectName(QStringLiteral("label_2"));
+        state_label = new QLabel(SeekByName);
+        state_label->setObjectName(QStringLiteral("state_label"));
 
-        verticalLayout_2->addWidget(label_2);
+        verticalLayout_2->addWidget(state_label);
 
 
         retranslateUi(SeekByName);
@@ -170,12 +170,12 @@ public:
     void retranslateUi(QWidget *SeekByName)
     {
         SeekByName->setWindowTitle(QApplication::translate("SeekByName", "Form", Q_NULLPTR));
-        label->setText(QApplication::translate("SeekByName", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \321\204\320\260\320\274\320\270\320\273\320\270\321\216", Q_NULLPTR));
-        lineEdit->setText(QString());
-        label_3->setText(QApplication::translate("SeekByName", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\270\320\274\321\217", Q_NULLPTR));
-        label_4->setText(QApplication::translate("SeekByName", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\276\321\202\321\207\320\265\321\201\321\202\320\262\320\276", Q_NULLPTR));
+        surname_label->setText(QApplication::translate("SeekByName", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \321\204\320\260\320\274\320\270\320\273\320\270\321\216", Q_NULLPTR));
+        surname_edit->setText(QString());
+        name_label->setText(QApplication::translate("SeekByName", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\270\320\274\321\217", Q_NULLPTR));
+        patronymic_label->setText(QApplication::translate("SeekByName", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\276\321\202\321\207\320\265\321\201\321\202\320\262\320\276", Q_NULLPTR));
         Enter_FIO->setText(QApplication::translate("SeekByName", "\320\236\320\272", Q_NULLPTR));
-        label_2->setText(QApplication::translate("SeekByName", "\320\232\320\276\320\274\320\265\320\275\320\264\320\260\320\275\321\202:", Q_NULLPTR));
+        state_label->setText(QApplication::translate("SeekByName", "\320\232\320\276\320\274\320\265\320\275\320\264\320\260\320\275\321\202:", Q_NULLPTR));
     } // retranslateUi
 
 };

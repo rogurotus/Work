@@ -29,22 +29,27 @@ class Ui_RedactData
 {
 public:
     QVBoxLayout *verticalLayout;
-    QLabel *label;
-    QLineEdit *lineEdit;
-    QLabel *label_2;
-    QLineEdit *lineEdit_2;
+    QLabel *address_label;
+    QLineEdit *address_edit;
+    QSpacerItem *verticalSpacer_3;
+    QLabel *surname_label;
+    QLineEdit *surname_edit;
+    QLabel *name_label;
+    QLineEdit *name_edit;
+    QLabel *patronymic_label;
+    QLineEdit *patronymic_edit;
     QSpacerItem *verticalSpacer;
-    QLabel *label_3;
-    QLabel *label_4;
-    QLineEdit *lineEdit_3;
-    QLabel *label_5;
-    QSpinBox *spinBox;
+    QLabel *building1_label;
+    QLabel *room_amount1_label;
+    QLineEdit *room_amount1_edit;
+    QLabel *place_amount1_label;
+    QSpinBox *place_amount1_spinbox;
     QSpacerItem *verticalSpacer_2;
-    QLabel *label_6;
-    QLabel *label_7;
-    QLineEdit *lineEdit_4;
-    QLabel *label_8;
-    QSpinBox *spinBox_2;
+    QLabel *building2_label;
+    QLabel *room_amount2_label;
+    QLineEdit *room_amount2_edit;
+    QLabel *place_amount2_label;
+    QSpinBox *place_amount2_spinbox;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer;
     QPushButton *pushButton;
@@ -56,104 +61,130 @@ public:
     {
         if (RedactData->objectName().isEmpty())
             RedactData->setObjectName(QStringLiteral("RedactData"));
-        RedactData->resize(350, 500);
-        RedactData->setMinimumSize(QSize(350, 500));
-        RedactData->setMaximumSize(QSize(350, 500));
+        RedactData->resize(350, 600);
+        RedactData->setMinimumSize(QSize(350, 600));
+        RedactData->setMaximumSize(QSize(350, 600));
         verticalLayout = new QVBoxLayout(RedactData);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        label = new QLabel(RedactData);
-        label->setObjectName(QStringLiteral("label"));
+        address_label = new QLabel(RedactData);
+        address_label->setObjectName(QStringLiteral("address_label"));
         QFont font;
         font.setPointSize(10);
-        label->setFont(font);
+        address_label->setFont(font);
 
-        verticalLayout->addWidget(label);
+        verticalLayout->addWidget(address_label);
 
-        lineEdit = new QLineEdit(RedactData);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        address_edit = new QLineEdit(RedactData);
+        address_edit->setObjectName(QStringLiteral("address_edit"));
 
-        verticalLayout->addWidget(lineEdit);
+        verticalLayout->addWidget(address_edit);
 
-        label_2 = new QLabel(RedactData);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setFont(font);
+        verticalSpacer_3 = new QSpacerItem(20, 10, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
-        verticalLayout->addWidget(label_2);
+        verticalLayout->addItem(verticalSpacer_3);
 
-        lineEdit_2 = new QLineEdit(RedactData);
-        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
+        surname_label = new QLabel(RedactData);
+        surname_label->setObjectName(QStringLiteral("surname_label"));
+        surname_label->setFont(font);
 
-        verticalLayout->addWidget(lineEdit_2);
+        verticalLayout->addWidget(surname_label);
+
+        surname_edit = new QLineEdit(RedactData);
+        surname_edit->setObjectName(QStringLiteral("surname_edit"));
+
+        verticalLayout->addWidget(surname_edit);
+
+        name_label = new QLabel(RedactData);
+        name_label->setObjectName(QStringLiteral("name_label"));
+        name_label->setFont(font);
+
+        verticalLayout->addWidget(name_label);
+
+        name_edit = new QLineEdit(RedactData);
+        name_edit->setObjectName(QStringLiteral("name_edit"));
+
+        verticalLayout->addWidget(name_edit);
+
+        patronymic_label = new QLabel(RedactData);
+        patronymic_label->setObjectName(QStringLiteral("patronymic_label"));
+        patronymic_label->setFont(font);
+
+        verticalLayout->addWidget(patronymic_label);
+
+        patronymic_edit = new QLineEdit(RedactData);
+        patronymic_edit->setObjectName(QStringLiteral("patronymic_edit"));
+
+        verticalLayout->addWidget(patronymic_edit);
 
         verticalSpacer = new QSpacerItem(20, 10, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
         verticalLayout->addItem(verticalSpacer);
 
-        label_3 = new QLabel(RedactData);
-        label_3->setObjectName(QStringLiteral("label_3"));
+        building1_label = new QLabel(RedactData);
+        building1_label->setObjectName(QStringLiteral("building1_label"));
         QFont font1;
         font1.setPointSize(10);
         font1.setBold(true);
         font1.setWeight(75);
-        label_3->setFont(font1);
+        building1_label->setFont(font1);
 
-        verticalLayout->addWidget(label_3);
+        verticalLayout->addWidget(building1_label);
 
-        label_4 = new QLabel(RedactData);
-        label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setFont(font);
+        room_amount1_label = new QLabel(RedactData);
+        room_amount1_label->setObjectName(QStringLiteral("room_amount1_label"));
+        room_amount1_label->setFont(font);
 
-        verticalLayout->addWidget(label_4);
+        verticalLayout->addWidget(room_amount1_label);
 
-        lineEdit_3 = new QLineEdit(RedactData);
-        lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
+        room_amount1_edit = new QLineEdit(RedactData);
+        room_amount1_edit->setObjectName(QStringLiteral("room_amount1_edit"));
 
-        verticalLayout->addWidget(lineEdit_3);
+        verticalLayout->addWidget(room_amount1_edit);
 
-        label_5 = new QLabel(RedactData);
-        label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setFont(font);
+        place_amount1_label = new QLabel(RedactData);
+        place_amount1_label->setObjectName(QStringLiteral("place_amount1_label"));
+        place_amount1_label->setFont(font);
 
-        verticalLayout->addWidget(label_5);
+        verticalLayout->addWidget(place_amount1_label);
 
-        spinBox = new QSpinBox(RedactData);
-        spinBox->setObjectName(QStringLiteral("spinBox"));
-        spinBox->setMaximumSize(QSize(50, 16777215));
+        place_amount1_spinbox = new QSpinBox(RedactData);
+        place_amount1_spinbox->setObjectName(QStringLiteral("place_amount1_spinbox"));
+        place_amount1_spinbox->setMaximumSize(QSize(50, 16777215));
 
-        verticalLayout->addWidget(spinBox);
+        verticalLayout->addWidget(place_amount1_spinbox);
 
         verticalSpacer_2 = new QSpacerItem(20, 10, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
         verticalLayout->addItem(verticalSpacer_2);
 
-        label_6 = new QLabel(RedactData);
-        label_6->setObjectName(QStringLiteral("label_6"));
-        label_6->setFont(font1);
+        building2_label = new QLabel(RedactData);
+        building2_label->setObjectName(QStringLiteral("building2_label"));
+        building2_label->setFont(font1);
 
-        verticalLayout->addWidget(label_6);
+        verticalLayout->addWidget(building2_label);
 
-        label_7 = new QLabel(RedactData);
-        label_7->setObjectName(QStringLiteral("label_7"));
-        label_7->setFont(font);
+        room_amount2_label = new QLabel(RedactData);
+        room_amount2_label->setObjectName(QStringLiteral("room_amount2_label"));
+        room_amount2_label->setFont(font);
 
-        verticalLayout->addWidget(label_7);
+        verticalLayout->addWidget(room_amount2_label);
 
-        lineEdit_4 = new QLineEdit(RedactData);
-        lineEdit_4->setObjectName(QStringLiteral("lineEdit_4"));
+        room_amount2_edit = new QLineEdit(RedactData);
+        room_amount2_edit->setObjectName(QStringLiteral("room_amount2_edit"));
 
-        verticalLayout->addWidget(lineEdit_4);
+        verticalLayout->addWidget(room_amount2_edit);
 
-        label_8 = new QLabel(RedactData);
-        label_8->setObjectName(QStringLiteral("label_8"));
-        label_8->setFont(font);
+        place_amount2_label = new QLabel(RedactData);
+        place_amount2_label->setObjectName(QStringLiteral("place_amount2_label"));
+        place_amount2_label->setFont(font);
 
-        verticalLayout->addWidget(label_8);
+        verticalLayout->addWidget(place_amount2_label);
 
-        spinBox_2 = new QSpinBox(RedactData);
-        spinBox_2->setObjectName(QStringLiteral("spinBox_2"));
-        spinBox_2->setMaximumSize(QSize(50, 16777215));
+        place_amount2_spinbox = new QSpinBox(RedactData);
+        place_amount2_spinbox->setObjectName(QStringLiteral("place_amount2_spinbox"));
+        place_amount2_spinbox->setMaximumSize(QSize(50, 16777215));
 
-        verticalLayout->addWidget(spinBox_2);
+        verticalLayout->addWidget(place_amount2_spinbox);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
@@ -193,14 +224,16 @@ public:
     void retranslateUi(QWidget *RedactData)
     {
         RedactData->setWindowTitle(QApplication::translate("RedactData", "\320\240\320\265\320\264\320\260\320\272\321\202\320\270\321\200\320\276\320\262\320\260\320\275\320\270\320\265 \320\264\320\260\320\275\320\275\321\213\321\205", Q_NULLPTR));
-        label->setText(QApplication::translate("RedactData", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\260\320\264\321\200\320\265\321\201 \320\276\320\261\321\211\320\265\320\266\320\270\321\202\320\270\321\217", Q_NULLPTR));
-        label_2->setText(QApplication::translate("RedactData", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\244\320\230\320\236 \320\272\320\276\320\274\320\265\320\275\320\264\320\260\320\275\321\202\320\260", Q_NULLPTR));
-        label_3->setText(QApplication::translate("RedactData", "\320\232\320\276\321\200\320\277\321\203\321\201 \342\204\226 0", Q_NULLPTR));
-        label_4->setText(QApplication::translate("RedactData", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\272\320\276\320\273\320\270\321\207\320\265\321\201\321\202\320\262\320\276 \320\272\320\276\320\274\320\275\320\260\321\202", Q_NULLPTR));
-        label_5->setText(QApplication::translate("RedactData", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\272\320\276\320\273\320\270\321\207\320\265\321\201\321\202\320\262\320\276 \320\274\320\265\321\201\321\202 \320\262 \320\272\320\276\320\274\320\275\320\260\321\202\320\265", Q_NULLPTR));
-        label_6->setText(QApplication::translate("RedactData", "\320\232\320\276\321\200\320\277\321\203\321\201 \342\204\226 0", Q_NULLPTR));
-        label_7->setText(QApplication::translate("RedactData", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\272\320\276\320\273\320\270\321\207\320\265\321\201\321\202\320\262\320\276 \320\272\320\276\320\274\320\275\320\260\321\202", Q_NULLPTR));
-        label_8->setText(QApplication::translate("RedactData", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\272\320\276\320\273\320\270\321\207\320\265\321\201\321\202\320\262\320\276 \320\274\320\265\321\201\321\202 \320\262 \320\272\320\276\320\274\320\275\320\260\321\202\320\265", Q_NULLPTR));
+        address_label->setText(QApplication::translate("RedactData", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\260\320\264\321\200\320\265\321\201 \320\276\320\261\321\211\320\265\320\266\320\270\321\202\320\270\321\217", Q_NULLPTR));
+        surname_label->setText(QApplication::translate("RedactData", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \321\204\320\260\320\274\320\270\320\273\320\270\321\216 \320\272\320\276\320\274\320\265\320\275\320\264\320\260\320\275\321\202\320\260", Q_NULLPTR));
+        name_label->setText(QApplication::translate("RedactData", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\270\320\274\321\217 \320\272\320\276\320\274\320\265\320\275\320\264\320\260\320\275\321\202\320\260", Q_NULLPTR));
+        patronymic_label->setText(QApplication::translate("RedactData", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\276\321\202\321\207\320\265\321\201\321\202\320\262\320\276 \320\272\320\276\320\274\320\265\320\275\320\264\320\260\320\275\321\202\320\260", Q_NULLPTR));
+        building1_label->setText(QApplication::translate("RedactData", "\320\232\320\276\321\200\320\277\321\203\321\201 \342\204\226 0", Q_NULLPTR));
+        room_amount1_label->setText(QApplication::translate("RedactData", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\272\320\276\320\273\320\270\321\207\320\265\321\201\321\202\320\262\320\276 \320\272\320\276\320\274\320\275\320\260\321\202", Q_NULLPTR));
+        place_amount1_label->setText(QApplication::translate("RedactData", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\272\320\276\320\273\320\270\321\207\320\265\321\201\321\202\320\262\320\276 \320\274\320\265\321\201\321\202 \320\262 \320\272\320\276\320\274\320\275\320\260\321\202\320\265", Q_NULLPTR));
+        building2_label->setText(QApplication::translate("RedactData", "\320\232\320\276\321\200\320\277\321\203\321\201 \342\204\226 0", Q_NULLPTR));
+        room_amount2_label->setText(QApplication::translate("RedactData", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\272\320\276\320\273\320\270\321\207\320\265\321\201\321\202\320\262\320\276 \320\272\320\276\320\274\320\275\320\260\321\202", Q_NULLPTR));
+        place_amount2_label->setText(QApplication::translate("RedactData", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\272\320\276\320\273\320\270\321\207\320\265\321\201\321\202\320\262\320\276 \320\274\320\265\321\201\321\202 \320\262 \320\272\320\276\320\274\320\275\320\260\321\202\320\265", Q_NULLPTR));
         pushButton->setText(QApplication::translate("RedactData", "\320\236\320\272", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("RedactData", "\320\236\321\202\320\274\320\265\320\275\320\260", Q_NULLPTR));
     } // retranslateUi

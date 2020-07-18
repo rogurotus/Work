@@ -5,14 +5,35 @@
 #include <qsqlquery.h>
 #include <QDebug>
 
+static int build_id_first;
+static int build_id_second;
+
 MainComendant::MainComendant(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainComendant)
 {
     ui->setupUi(this);
-
+    DB db;
     QDate cDate = QDate::currentDate();
     ui->state_label->setText("Комендант: Главная " + cDate.toString());
+    QSqlQuery build(QString("select building.id, rooms, place_in_room "
+                            "from dormitory_building "
+                            "inner join building on dormitory_building.building = building.id "
+                            "where dormitory = %1 "
+                            "order by building.id;").
+                            arg(QString::number(db.login.get_id_dormitory())));
+    build.exec();
+    build.next();
+    build_id_first = build.value(0).toInt();
+    ui->building_1_label->setText("Корпус №" + QString::number(build_id_first));
+    ui->room_amount_1_label->setText("Всего комнат " + QString::number(build.value(1).toInt()));
+    ui->place_amount_1_label->setText("Мест в комнате " + QString::number(build.value(2).toInt()));
+
+    build.next();
+    build_id_second = build.value(0).toInt();
+    ui->building_2_label->setText("Корпус №" + QString::number(build_id_second));
+    ui->room_amount_2_label->setText("Всего комнат " + QString::number(build.value(1).toInt()));
+    ui->place_amount_2_label->setText("Мест в комнате " + QString::number(build.value(2).toInt()));
 }
 
 MainComendant::~MainComendant()
@@ -24,12 +45,8 @@ void MainComendant::on_action_triggered()
 {
     //Добавить информацию о заселенных лицах
     manageDatabase = new ManageDatabase;
-    QSqlTableModel* model = new QSqlTableModel(manageDatabase);
+    QSqlRelationalTableModel* model = new QSqlRelationalTableModel(manageDatabase);
 
-    /*
-    model->setTable("Больной_ф");
-    model->select();
-    */
 
     manageDatabase->set_model(model);
     manageDatabase->show();
@@ -129,7 +146,6 @@ void MainComendant::on_pushButton_clicked()
     redactData->show();
 }
 
-//////////////////////////////////////////////Здесь обновление
 void MainComendant::update(bool){
     DB db;
     QSqlQuery dormitory(QString("select * from dormitory "
@@ -139,11 +155,23 @@ void MainComendant::update(bool){
     dormitory.exec();
     //раскидываем значения общаги
 
+    QSqlQuery build(QString("select building.id, rooms, place_in_room "
+                            "from dormitory_building "
+                            "inner join building on dormitory_building.building = building.id "
+                            "where dormitory = %1 "
+                            "order by building.id;").
+                            arg(QString::number(db.login.get_id_dormitory())));
+    build.exec();
+    build.next();
+    build_id_first = build.value(0).toInt();
+    ui->building_1_label->setText("Корпус №" + QString::number(build_id_first));
+    ui->room_amount_1_label->setText("Всего комнат " + QString::number(build.value(1).toInt()));
+    ui->place_amount_1_label->setText("Мест в комнате " + QString::number(build.value(2).toInt()));
 
-    QSqlQuery building(QString("select * from dormitory_building "
-                               "inner join building on dormitory_building.building = building.id "
-                               "where dormitory = %1;").
-                                arg(QString::number(db.login.get_id())));
-    building.exec();
+    build.next();
+    build_id_second = build.value(0).toInt();
+    ui->building_2_label->setText("Корпус №" + QString::number(build_id_second));
+    ui->room_amount_2_label->setText("Всего комнат " + QString::number(build.value(1).toInt()));
+    ui->place_amount_2_label->setText("Мест в комнате " + QString::number(build.value(2).toInt()));
     // раскидываем значения корпусов
 }

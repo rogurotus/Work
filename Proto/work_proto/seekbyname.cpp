@@ -16,6 +16,6 @@ SeekByName::~SeekByName()
 
 void SeekByName::on_Enter_FIO_clicked()
 {
-    auto citizens = Citizen::search(ui->lineEdit_2->text(), ui->lineEdit->text(), ui->lineEdit_3->text());
+    auto citizens = Citizen::search(ui->name_edit->text(), ui->surname_edit->text(), ui->patronymic_edit->text());
     ui->tableView->setModel(Citizen::get_cojitel(citizens, this));
 }

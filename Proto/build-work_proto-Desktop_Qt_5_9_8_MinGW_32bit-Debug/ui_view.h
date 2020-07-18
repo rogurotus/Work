@@ -28,7 +28,7 @@ public:
     QVBoxLayout *verticalLayout;
     QTableView *tableView;
     QSpacerItem *verticalSpacer;
-    QLabel *label;
+    QLabel *state_label;
 
     void setupUi(QWidget *View)
     {
@@ -46,10 +46,10 @@ public:
 
         verticalLayout->addItem(verticalSpacer);
 
-        label = new QLabel(View);
-        label->setObjectName(QStringLiteral("label"));
+        state_label = new QLabel(View);
+        state_label->setObjectName(QStringLiteral("state_label"));
 
-        verticalLayout->addWidget(label);
+        verticalLayout->addWidget(state_label);
 
 
         retranslateUi(View);
@@ -60,7 +60,7 @@ public:
     void retranslateUi(QWidget *View)
     {
         View->setWindowTitle(QApplication::translate("View", "Form", Q_NULLPTR));
-        label->setText(QApplication::translate("View", "\320\232\320\276\320\274\320\265\320\275\320\264\320\260\320\275\321\202:", Q_NULLPTR));
+        state_label->setText(QApplication::translate("View", "\320\232\320\276\320\274\320\265\320\275\320\264\320\260\320\275\321\202:", Q_NULLPTR));
     } // retranslateUi
 
 };

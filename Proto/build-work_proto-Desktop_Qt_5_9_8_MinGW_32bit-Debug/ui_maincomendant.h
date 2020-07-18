@@ -43,24 +43,24 @@ public:
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer_4;
     QVBoxLayout *verticalLayout;
-    QGroupBox *groupbox;
+    QGroupBox *dormitory_groupbox;
     QVBoxLayout *verticalLayout_4;
-    QLabel *label_2;
-    QLabel *label_3;
+    QLabel *address_label;
+    QLabel *comendant_label;
     QSpacerItem *verticalSpacer;
-    QLabel *label_4;
-    QLabel *label_5;
-    QLabel *label_6;
+    QLabel *building_1_label;
+    QLabel *room_amount_1_label;
+    QLabel *place_amount_1_label;
     QSpacerItem *verticalSpacer_2;
-    QLabel *label_7;
-    QLabel *label_8;
-    QLabel *label_9;
+    QLabel *building_2_label;
+    QLabel *room_amount_2_label;
+    QLabel *place_amount_2_label;
     QHBoxLayout *horizontalLayout_2;
     QSpacerItem *horizontalSpacer;
     QPushButton *pushButton;
     QSpacerItem *horizontalSpacer_2;
     QSpacerItem *horizontalSpacer_3;
-    QLabel *label;
+    QLabel *state_label;
     QMenuBar *menubar;
     QMenu *menu;
     QMenu *menu_2;
@@ -98,81 +98,81 @@ public:
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        groupbox = new QGroupBox(centralwidget);
-        groupbox->setObjectName(QStringLiteral("groupbox"));
+        dormitory_groupbox = new QGroupBox(centralwidget);
+        dormitory_groupbox->setObjectName(QStringLiteral("dormitory_groupbox"));
         QFont font;
         font.setPointSize(14);
         font.setBold(true);
         font.setWeight(75);
-        groupbox->setFont(font);
-        verticalLayout_4 = new QVBoxLayout(groupbox);
+        dormitory_groupbox->setFont(font);
+        verticalLayout_4 = new QVBoxLayout(dormitory_groupbox);
         verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
-        label_2 = new QLabel(groupbox);
-        label_2->setObjectName(QStringLiteral("label_2"));
+        address_label = new QLabel(dormitory_groupbox);
+        address_label->setObjectName(QStringLiteral("address_label"));
         QFont font1;
         font1.setPointSize(12);
         font1.setBold(false);
         font1.setWeight(50);
-        label_2->setFont(font1);
+        address_label->setFont(font1);
 
-        verticalLayout_4->addWidget(label_2);
+        verticalLayout_4->addWidget(address_label);
 
-        label_3 = new QLabel(groupbox);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setFont(font1);
+        comendant_label = new QLabel(dormitory_groupbox);
+        comendant_label->setObjectName(QStringLiteral("comendant_label"));
+        comendant_label->setFont(font1);
 
-        verticalLayout_4->addWidget(label_3);
+        verticalLayout_4->addWidget(comendant_label);
 
         verticalSpacer = new QSpacerItem(20, 10, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
         verticalLayout_4->addItem(verticalSpacer);
 
-        label_4 = new QLabel(groupbox);
-        label_4->setObjectName(QStringLiteral("label_4"));
+        building_1_label = new QLabel(dormitory_groupbox);
+        building_1_label->setObjectName(QStringLiteral("building_1_label"));
         QFont font2;
         font2.setPointSize(12);
         font2.setBold(true);
         font2.setWeight(75);
-        label_4->setFont(font2);
+        building_1_label->setFont(font2);
 
-        verticalLayout_4->addWidget(label_4);
+        verticalLayout_4->addWidget(building_1_label);
 
-        label_5 = new QLabel(groupbox);
-        label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setFont(font1);
+        room_amount_1_label = new QLabel(dormitory_groupbox);
+        room_amount_1_label->setObjectName(QStringLiteral("room_amount_1_label"));
+        room_amount_1_label->setFont(font1);
 
-        verticalLayout_4->addWidget(label_5);
+        verticalLayout_4->addWidget(room_amount_1_label);
 
-        label_6 = new QLabel(groupbox);
-        label_6->setObjectName(QStringLiteral("label_6"));
-        label_6->setFont(font1);
+        place_amount_1_label = new QLabel(dormitory_groupbox);
+        place_amount_1_label->setObjectName(QStringLiteral("place_amount_1_label"));
+        place_amount_1_label->setFont(font1);
 
-        verticalLayout_4->addWidget(label_6);
+        verticalLayout_4->addWidget(place_amount_1_label);
 
         verticalSpacer_2 = new QSpacerItem(20, 10, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
         verticalLayout_4->addItem(verticalSpacer_2);
 
-        label_7 = new QLabel(groupbox);
-        label_7->setObjectName(QStringLiteral("label_7"));
-        label_7->setFont(font2);
+        building_2_label = new QLabel(dormitory_groupbox);
+        building_2_label->setObjectName(QStringLiteral("building_2_label"));
+        building_2_label->setFont(font2);
 
-        verticalLayout_4->addWidget(label_7);
+        verticalLayout_4->addWidget(building_2_label);
 
-        label_8 = new QLabel(groupbox);
-        label_8->setObjectName(QStringLiteral("label_8"));
-        label_8->setFont(font1);
+        room_amount_2_label = new QLabel(dormitory_groupbox);
+        room_amount_2_label->setObjectName(QStringLiteral("room_amount_2_label"));
+        room_amount_2_label->setFont(font1);
 
-        verticalLayout_4->addWidget(label_8);
+        verticalLayout_4->addWidget(room_amount_2_label);
 
-        label_9 = new QLabel(groupbox);
-        label_9->setObjectName(QStringLiteral("label_9"));
-        label_9->setFont(font1);
+        place_amount_2_label = new QLabel(dormitory_groupbox);
+        place_amount_2_label->setObjectName(QStringLiteral("place_amount_2_label"));
+        place_amount_2_label->setFont(font1);
 
-        verticalLayout_4->addWidget(label_9);
+        verticalLayout_4->addWidget(place_amount_2_label);
 
 
-        verticalLayout->addWidget(groupbox);
+        verticalLayout->addWidget(dormitory_groupbox);
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
@@ -205,11 +205,11 @@ public:
 
         verticalLayout_3->addLayout(horizontalLayout);
 
-        label = new QLabel(centralwidget);
-        label->setObjectName(QStringLiteral("label"));
-        label->setMaximumSize(QSize(16777215, 10));
+        state_label = new QLabel(centralwidget);
+        state_label->setObjectName(QStringLiteral("state_label"));
+        state_label->setMaximumSize(QSize(16777215, 10));
 
-        verticalLayout_3->addWidget(label);
+        verticalLayout_3->addWidget(state_label);
 
         MainComendant->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainComendant);
@@ -252,17 +252,17 @@ public:
         action_5->setText(QApplication::translate("MainComendant", "\320\237\320\276\320\273\321\203\321\207\320\270\321\202\321\214 \320\270\320\275\321\204\320\276\321\200\320\274\320\260\321\206\320\270\321\216 \320\276 \320\272\320\276\320\274\320\275\320\260\321\202\320\265", Q_NULLPTR));
         action_6->setText(QApplication::translate("MainComendant", "\320\237\320\276\320\273\321\203\321\207\320\270\321\202\321\214 \321\201\320\277\320\270\321\201\320\276\320\272 \320\277\321\200\320\276\320\266\320\270\320\262\320\260\321\216\321\211\320\270\321\205", Q_NULLPTR));
         action_7->setText(QApplication::translate("MainComendant", "\320\237\320\276\320\273\321\203\321\207\320\270\321\202\321\214 \321\201\320\277\320\270\321\201\320\276\320\272 \320\267\320\260\321\217\320\262\320\276\320\272", Q_NULLPTR));
-        groupbox->setTitle(QApplication::translate("MainComendant", "\320\236\320\261\321\211\320\265\320\266\320\270\321\202\320\270\320\265 \342\204\226 0", Q_NULLPTR));
-        label_2->setText(QApplication::translate("MainComendant", "\320\220\320\264\321\200\320\265\321\201:", Q_NULLPTR));
-        label_3->setText(QApplication::translate("MainComendant", "\320\232\320\276\320\274\320\265\320\275\320\264\320\260\320\275\321\202: ", Q_NULLPTR));
-        label_4->setText(QApplication::translate("MainComendant", "\320\232\320\276\321\200\320\277\321\203\321\201 \342\204\226 0", Q_NULLPTR));
-        label_5->setText(QApplication::translate("MainComendant", "\320\232\320\276\320\273\320\270\321\207\320\265\321\201\321\202\320\262\320\276 \320\272\320\276\320\274\320\275\320\260\321\202:", Q_NULLPTR));
-        label_6->setText(QApplication::translate("MainComendant", "\320\232\320\276\320\273\320\270\321\207\320\265\321\201\321\202\320\262\320\276 \320\274\320\265\321\201\321\202 \320\262 \320\272\320\276\320\274\320\275\320\260\321\202\320\265:", Q_NULLPTR));
-        label_7->setText(QApplication::translate("MainComendant", "\320\232\320\276\321\200\320\277\321\203\321\201 \342\204\226 0", Q_NULLPTR));
-        label_8->setText(QApplication::translate("MainComendant", "\320\232\320\276\320\273\320\270\321\207\320\265\321\201\321\202\320\262\320\276 \320\272\320\276\320\274\320\275\320\260\321\202:", Q_NULLPTR));
-        label_9->setText(QApplication::translate("MainComendant", "\320\232\320\276\320\273\320\270\321\207\320\265\321\201\321\202\320\262\320\276 \320\274\320\265\321\201\321\202 \320\262 \320\272\320\276\320\274\320\275\320\260\321\202\320\265:", Q_NULLPTR));
+        dormitory_groupbox->setTitle(QApplication::translate("MainComendant", "\320\236\320\261\321\211\320\265\320\266\320\270\321\202\320\270\320\265 \342\204\226 0", Q_NULLPTR));
+        address_label->setText(QApplication::translate("MainComendant", "\320\220\320\264\321\200\320\265\321\201:", Q_NULLPTR));
+        comendant_label->setText(QApplication::translate("MainComendant", "\320\232\320\276\320\274\320\265\320\275\320\264\320\260\320\275\321\202: ", Q_NULLPTR));
+        building_1_label->setText(QApplication::translate("MainComendant", "\320\232\320\276\321\200\320\277\321\203\321\201 \342\204\226 0", Q_NULLPTR));
+        room_amount_1_label->setText(QApplication::translate("MainComendant", "\320\232\320\276\320\273\320\270\321\207\320\265\321\201\321\202\320\262\320\276 \320\272\320\276\320\274\320\275\320\260\321\202:", Q_NULLPTR));
+        place_amount_1_label->setText(QApplication::translate("MainComendant", "\320\232\320\276\320\273\320\270\321\207\320\265\321\201\321\202\320\262\320\276 \320\274\320\265\321\201\321\202 \320\262 \320\272\320\276\320\274\320\275\320\260\321\202\320\265:", Q_NULLPTR));
+        building_2_label->setText(QApplication::translate("MainComendant", "\320\232\320\276\321\200\320\277\321\203\321\201 \342\204\226 0", Q_NULLPTR));
+        room_amount_2_label->setText(QApplication::translate("MainComendant", "\320\232\320\276\320\273\320\270\321\207\320\265\321\201\321\202\320\262\320\276 \320\272\320\276\320\274\320\275\320\260\321\202:", Q_NULLPTR));
+        place_amount_2_label->setText(QApplication::translate("MainComendant", "\320\232\320\276\320\273\320\270\321\207\320\265\321\201\321\202\320\262\320\276 \320\274\320\265\321\201\321\202 \320\262 \320\272\320\276\320\274\320\275\320\260\321\202\320\265:", Q_NULLPTR));
         pushButton->setText(QApplication::translate("MainComendant", "\320\240\320\265\320\264\320\260\320\272\321\202\320\270\321\200\320\276\320\262\320\260\321\202\321\214", Q_NULLPTR));
-        label->setText(QApplication::translate("MainComendant", "\320\232\320\276\320\274\320\265\320\275\320\264\320\260\320\275\321\202: \320\223\320\273\320\260\320\262\320\275\320\260\321\217", Q_NULLPTR));
+        state_label->setText(QApplication::translate("MainComendant", "\320\232\320\276\320\274\320\265\320\275\320\264\320\260\320\275\321\202: \320\223\320\273\320\260\320\262\320\275\320\260\321\217", Q_NULLPTR));
         menu->setTitle(QApplication::translate("MainComendant", "\320\243\320\277\321\200\320\260\320\262\320\273\320\265\320\275\320\270\320\265 \320\276\320\261\321\211\320\265\320\266\320\270\321\202\320\270\320\265\320\274", Q_NULLPTR));
         menu_2->setTitle(QApplication::translate("MainComendant", "\320\224\320\260\320\275\320\275\321\213\320\265", Q_NULLPTR));
         menu_3->setTitle(QApplication::translate("MainComendant", "\320\227\320\260\321\217\320\262\320\272\320\270", Q_NULLPTR));

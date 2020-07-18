@@ -49,10 +49,10 @@ void MainWindow::on_pushButton_clicked()
             }
             else
             {
-                if(Login::check_login_pass(ui->login_edit->text(), ui->lineEdit_2->text()))
+                if(Login::check_login_pass(ui->login_edit->text(), ui->password_edit->text()))
                 {
                     // инициализая db.login
-                    db.login = Login(ui->login_edit->text(), ui->lineEdit_2->text());
+                    db.login = Login(ui->login_edit->text(), ui->password_edit->text());
                     maincomendant = new MainComendant;
                     maincomendant->show();
                     this->close();

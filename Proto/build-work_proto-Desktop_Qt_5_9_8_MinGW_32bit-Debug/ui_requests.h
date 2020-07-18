@@ -26,7 +26,7 @@ class Ui_Requests
 public:
     QVBoxLayout *verticalLayout;
     QTableView *tableView;
-    QLabel *label;
+    QLabel *state_label;
 
     void setupUi(QWidget *Requests)
     {
@@ -40,10 +40,10 @@ public:
 
         verticalLayout->addWidget(tableView);
 
-        label = new QLabel(Requests);
-        label->setObjectName(QStringLiteral("label"));
+        state_label = new QLabel(Requests);
+        state_label->setObjectName(QStringLiteral("state_label"));
 
-        verticalLayout->addWidget(label);
+        verticalLayout->addWidget(state_label);
 
 
         retranslateUi(Requests);
@@ -54,7 +54,7 @@ public:
     void retranslateUi(QWidget *Requests)
     {
         Requests->setWindowTitle(QApplication::translate("Requests", "\320\241\320\277\320\270\321\201\320\276\320\272 \320\267\320\260\321\217\320\262\320\276\320\272", Q_NULLPTR));
-        label->setText(QApplication::translate("Requests", "\320\232\320\276\320\274\320\265\320\275\320\264\320\260\320\275\321\202: ", Q_NULLPTR));
+        state_label->setText(QApplication::translate("Requests", "\320\232\320\276\320\274\320\265\320\275\320\264\320\260\320\275\321\202: ", Q_NULLPTR));
     } // retranslateUi
 
 };

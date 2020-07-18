@@ -1,6 +1,6 @@
 #include "managedatabase.h"
 #include "ui_managedatabase.h"
-#include <QSqlTableModel>
+#include <qsqlrelationaltablemodel.h>
 
 ManageDatabase::ManageDatabase(QWidget *parent) :
     QWidget(parent),
@@ -28,7 +28,7 @@ void ManageDatabase::on_pushButton_2_clicked()
     model->removeRow(currentDiscount.row(),QModelIndex());
 }
 
-void ManageDatabase::set_model(QSqlTableModel* model)
+void ManageDatabase::set_model(QSqlRelationalTableModel* model)
 {
     this->model = model;
     ui->tableView->setModel(model);
