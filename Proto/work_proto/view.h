@@ -15,6 +15,9 @@ public:
     explicit View(QWidget *parent = nullptr);
     ~View();
 
+public slots:
+    void setTitle(QString name);
+
 private:
     Ui::View *ui;
 };

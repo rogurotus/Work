@@ -28,10 +28,10 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
-    QLabel *label;
-    QLineEdit *lineEdit;
-    QLabel *label_2;
-    QLineEdit *lineEdit_2;
+    QLabel *login_label;
+    QLineEdit *login_edit;
+    QLabel *password_label;
+    QLineEdit *password_edit;
     QHBoxLayout *horizontalLayout;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
@@ -49,27 +49,27 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         verticalLayout = new QVBoxLayout(centralwidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        label = new QLabel(centralwidget);
-        label->setObjectName(QString::fromUtf8("label"));
+        login_label = new QLabel(centralwidget);
+        login_label->setObjectName(QString::fromUtf8("login_label"));
 
-        verticalLayout->addWidget(label);
+        verticalLayout->addWidget(login_label);
 
-        lineEdit = new QLineEdit(centralwidget);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        login_edit = new QLineEdit(centralwidget);
+        login_edit->setObjectName(QString::fromUtf8("login_edit"));
 
-        verticalLayout->addWidget(lineEdit);
+        verticalLayout->addWidget(login_edit);
 
-        label_2 = new QLabel(centralwidget);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setMinimumSize(QSize(0, 0));
-        label_2->setMaximumSize(QSize(10000, 10000));
+        password_label = new QLabel(centralwidget);
+        password_label->setObjectName(QString::fromUtf8("password_label"));
+        password_label->setMinimumSize(QSize(0, 0));
+        password_label->setMaximumSize(QSize(10000, 10000));
 
-        verticalLayout->addWidget(label_2);
+        verticalLayout->addWidget(password_label);
 
-        lineEdit_2 = new QLineEdit(centralwidget);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
+        password_edit = new QLineEdit(centralwidget);
+        password_edit->setObjectName(QString::fromUtf8("password_edit"));
 
-        verticalLayout->addWidget(lineEdit_2);
+        verticalLayout->addWidget(password_edit);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
@@ -103,8 +103,8 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "\320\220\321\203\321\202\320\265\320\275\321\202\320\270\321\204\320\270\320\272\320\260\321\206\320\270\321\217", nullptr));
-        label->setText(QApplication::translate("MainWindow", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\273\320\276\320\263\320\270\320\275", nullptr));
-        label_2->setText(QApplication::translate("MainWindow", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\277\320\260\321\200\320\276\320\273\321\214", nullptr));
+        login_label->setText(QApplication::translate("MainWindow", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\273\320\276\320\263\320\270\320\275", nullptr));
+        password_label->setText(QApplication::translate("MainWindow", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\277\320\260\321\200\320\276\320\273\321\214", nullptr));
 #ifndef QT_NO_TOOLTIP
         pushButton->setToolTip(QApplication::translate("MainWindow", "\320\222\320\276\320\271\321\202\320\270 \320\272\320\260\320\272 \320\272\320\276\320\274\320\265\320\275\320\273\320\260\320\275\321\202. \320\242\321\200\320\265\320\261\321\203\320\265\321\202\321\201\321\217 \320\260\321\203\321\202\320\265\320\275\321\202\320\270\321\204\320\270\320\272\320\260\321\206\320\270\321\217.", nullptr));
 #endif // QT_NO_TOOLTIP

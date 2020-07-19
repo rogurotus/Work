@@ -1,5 +1,6 @@
 #include "managedatabase.h"
 #include "ui_managedatabase.h"
+#include <QDate>
 
 ManageDatabase::ManageDatabase(QWidget *parent) :
     QWidget(parent),
@@ -36,4 +37,15 @@ void ManageDatabase::on_redact_button_clicked()
 void ManageDatabase::update_human(bool){
     //Обновление
     ui->state_label->setText("AAAAAAAAAAAAAAAAAAAAAAAA");
+}
+
+void ManageDatabase::setTitle(QString name){
+    QDate cDate = QDate::currentDate();
+    ui->state_label->setText("Комендант: Главная->" + name + cDate.toString());
+
+    if(name == "Изменение информации о выселенных лицах ")
+    {
+        ui->pushButton->hide();
+        ui->horizontalSpacer_4->changeSize(0, 10);
+    }
 }

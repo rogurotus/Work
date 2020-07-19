@@ -18,6 +18,7 @@ public:
 
 public slots:
     void update_human(bool);
+    void setTitle(QString name);
 
 private slots:
     void on_pushButton_clicked();

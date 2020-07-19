@@ -40,6 +40,10 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_action_8_triggered();
+
+    void on_action_9_triggered();
+
 private:
     Ui::MainComendant *ui;
 

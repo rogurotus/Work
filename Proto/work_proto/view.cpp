@@ -1,5 +1,6 @@
 #include "view.h"
 #include "ui_view.h"
+#include <QDate>
 
 View::View(QWidget *parent) :
     QWidget(parent),
@@ -11,4 +12,9 @@ View::View(QWidget *parent) :
 View::~View()
 {
     delete ui;
+}
+
+void View::setTitle(QString name){
+    QDate cDate = QDate::currentDate();
+    ui->state_label->setText("Комендант: Главная->" + name + cDate.toString());
 }
