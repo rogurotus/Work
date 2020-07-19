@@ -14,16 +14,6 @@ ManageDatabase::~ManageDatabase()
     delete ui;
 }
 
-void ManageDatabase::on_pushButton_clicked()
-{
-    //Добавить
-}
-
-void ManageDatabase::on_pushButton_2_clicked()
-{
-    //Удалить
-}
-
 void ManageDatabase::on_redact_button_clicked()
 {
     //Редактирование
@@ -42,10 +32,4 @@ void ManageDatabase::update_human(bool){
 void ManageDatabase::setTitle(QString name){
     QDate cDate = QDate::currentDate();
     ui->state_label->setText("Комендант: Главная->" + name + cDate.toString());
-
-    if(name == "Изменение информации о выселенных лицах ")
-    {
-        ui->pushButton->hide();
-        ui->horizontalSpacer_4->changeSize(0, 10);
-    }
 }
