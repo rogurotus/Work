@@ -7,6 +7,7 @@ INPUT(
 ./release\makerequest.o
 ./release\managedatabase.o
 ./release\redactdata.o
+./release\redacthuman.o
 ./release\requests.o
 ./release\seekbyname.o
 ./release\view.o
@@ -16,6 +17,7 @@ INPUT(
 ./release\moc_makerequest.o
 ./release\moc_managedatabase.o
 ./release\moc_redactdata.o
+./release\moc_redacthuman.o
 ./release\moc_requests.o
 ./release\moc_seekbyname.o
 ./release\moc_view.o

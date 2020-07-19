@@ -16,7 +16,7 @@ class ManageDatabase : public QWidget
 public:
     explicit ManageDatabase(QWidget *parent = nullptr);
     ~ManageDatabase();
-    void set_model(QSqlRelationalTableModel* model);
+    void set_model(QSqlQueryModel* model);
 
 public slots:
     void update_human(bool);
@@ -30,7 +30,7 @@ private slots:
 
 private:
     Ui::ManageDatabase *ui;
-    QSqlTableModel *model;
+    QSqlQueryModel *model;
     RedactHuman * redactHuman;
 };
 

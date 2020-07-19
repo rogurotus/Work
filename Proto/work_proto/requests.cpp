@@ -9,9 +9,9 @@ Requests::Requests(QWidget *parent) :
 {
     ui->setupUi(this);
     QSqlQueryModel* model = new QSqlQueryModel(this);
-    QSqlQuery *q = new QSqlQuery(QString("select citizen.id, name, surname, patronymic, "
-                                         "status, position, telephone, mail from request_dormitory "
-                                         "inner join citizen on human = citizen.id;"));
+    QSqlQuery *q = new QSqlQuery(
+                " select *"
+                " from citizen where in_date is null and out_date is null;");
 
     model->setQuery(*q);
     ui->tableView->setModel(model);

@@ -19,4 +19,5 @@ void RedactHuman::on_redacted_clicked()
 {
     //Принять изменения
     emit redacted_human(true);
+    this->close();
 }

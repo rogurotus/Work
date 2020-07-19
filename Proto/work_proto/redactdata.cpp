@@ -46,23 +46,42 @@ RedactData::~RedactData()
 
 void RedactData::on_pushButton_clicked()
 {
-    //не забыть заменить пустые строки на данные из лайблов
     DB db;
-    /*QSqlQuery login(QString("update login set surname = '%1' "
-                        "set name = '%2' "
-                        "set patronymic = '%3' where id = %4;").
-                        arg("","","",QString::number(db.login.get_id())));
-    login.exec();
+    if(ui->name_edit->text().trimmed() != "" &&
+       ui->surname_edit->text().trimmed() != "")
+    {
+        auto login_q = QString("update login set surname = '%1', "
+                               "name = '%2', "
+                               "patronymic = '%3' where id = %4;").
+                               arg(ui->surname_edit->text().trimmed() ,
+                                   ui->name_edit->text().trimmed() ,
+                                   ui->patronymic_edit->text().trimmed(),QString::number(db.login.get_id()));
+        QSqlQuery login(login_q);
+        if(!login.exec())
+        {
+            qDebug() << login_q;
+        }
 
+        db.login.name = ui->name_edit->text().trimmed();
+        db.login.surname = ui->surname_edit->text().trimmed();
+        db.login.patronymic = ui->patronymic_edit->text().trimmed();
+    }
 
-    db.login.name = "";
-    db.login.surname = "";
-    db.login.patronymic = "";*/
+    if(ui->address_edit->text().trimmed() != "")
+    {
+        QSqlQuery dorm(QString("update dormitory set address = '%1' "
+                            "where login = %4;").
+                            arg(ui->address_edit->text().trimmed() ,
+                                QString::number(db.login.get_id())));
+        dorm.exec();
+
+        db.login.address = ui->address_edit->text().trimmed();
+    }
 
     QString room_amount1_edit = ui->room_amount1_edit->text();
     if(ui->room_amount1_edit->text() == "")
     {
-        room_amount1_edit = ui->room_amount1_edit->text();
+        room_amount1_edit = ui->room_amount1_label->text().replace("Всего комнат ", "");
     }
 
     QString place_amount1_spinbox = QString::number(ui->place_amount1_spinbox->value());
@@ -84,7 +103,7 @@ void RedactData::on_pushButton_clicked()
     QString room_amount2_edit = ui->room_amount2_edit->text();
     if(ui->room_amount2_edit->text() == "")
     {
-        room_amount2_edit = ui->room_amount2_edit->text();
+        room_amount2_edit = ui->room_amount2_label->text().replace("Всего комнат ", "");
     }
 
     QString place_amount2_spinbox = QString::number(ui->place_amount2_spinbox->value());
