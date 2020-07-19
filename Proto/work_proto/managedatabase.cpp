@@ -3,6 +3,7 @@
 #include "ui_managedatabase.h"
 #include <qsqlquery.h>
 #include <qsqlrelationaltablemodel.h>
+#include <QDate>
 
 ManageDatabase::ManageDatabase(QWidget *parent) :
     QWidget(parent),
@@ -62,4 +63,9 @@ void ManageDatabase::update_human(bool){
                 " where citizen.out_date < date() and dormitory = %1;").arg(db.login.get_id_dormitory()));
     model->setQuery(*q);
     this->set_model(model);
+}
+
+void ManageDatabase::setTitle(QString name){
+    QDate cDate = QDate::currentDate();
+    ui->state_label->setText("Комендант: Главная->" + name + cDate.toString());
 }

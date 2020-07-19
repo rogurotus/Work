@@ -29,37 +29,37 @@ public:
     QSpacerItem *horizontalSpacer_4;
     QVBoxLayout *verticalLayout_2;
     QSpacerItem *verticalSpacer_5;
-    QGroupBox *groupBox;
+    QGroupBox *dormitory1_groupbox;
     QVBoxLayout *verticalLayout_4;
-    QLabel *label_2;
-    QLabel *label_3;
+    QLabel *address1_label;
+    QLabel *comendant1_label;
     QSpacerItem *verticalSpacer;
-    QLabel *label_4;
-    QLabel *label_5;
+    QLabel *building11_label;
+    QLabel *room_amount11_label;
     QSpacerItem *verticalSpacer_2;
-    QLabel *label_6;
-    QLabel *label_7;
+    QLabel *building12_label;
+    QLabel *room_amount12_label;
     QSpacerItem *verticalSpacer_7;
     QSpacerItem *horizontalSpacer_5;
     QVBoxLayout *verticalLayout_3;
     QSpacerItem *verticalSpacer_6;
-    QGroupBox *groupBox_2;
+    QGroupBox *dormitory2_groupbox;
     QVBoxLayout *verticalLayout_5;
-    QLabel *label_8;
-    QLabel *label_9;
+    QLabel *address2_label;
+    QLabel *comendant2_label;
     QSpacerItem *verticalSpacer_3;
-    QLabel *label_10;
-    QLabel *label_11;
+    QLabel *building21_label;
+    QLabel *room_amount21_label;
     QSpacerItem *verticalSpacer_4;
-    QLabel *label_12;
-    QLabel *label_13;
+    QLabel *building22_label;
+    QLabel *room_amount22_label;
     QSpacerItem *verticalSpacer_8;
     QSpacerItem *horizontalSpacer_3;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer;
     QPushButton *pushButton;
     QSpacerItem *horizontalSpacer_2;
-    QLabel *label;
+    QLabel *state_label;
 
     void setupUi(QWidget *MainVisiter)
     {
@@ -81,70 +81,70 @@ public:
 
         verticalLayout_2->addItem(verticalSpacer_5);
 
-        groupBox = new QGroupBox(MainVisiter);
-        groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        groupBox->setMinimumSize(QSize(0, 0));
+        dormitory1_groupbox = new QGroupBox(MainVisiter);
+        dormitory1_groupbox->setObjectName(QString::fromUtf8("dormitory1_groupbox"));
+        dormitory1_groupbox->setMinimumSize(QSize(0, 0));
         QFont font;
         font.setPointSize(14);
         font.setBold(true);
         font.setWeight(75);
-        groupBox->setFont(font);
-        verticalLayout_4 = new QVBoxLayout(groupBox);
+        dormitory1_groupbox->setFont(font);
+        verticalLayout_4 = new QVBoxLayout(dormitory1_groupbox);
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
-        label_2 = new QLabel(groupBox);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
+        address1_label = new QLabel(dormitory1_groupbox);
+        address1_label->setObjectName(QString::fromUtf8("address1_label"));
         QFont font1;
         font1.setPointSize(12);
         font1.setBold(false);
         font1.setWeight(50);
-        label_2->setFont(font1);
+        address1_label->setFont(font1);
 
-        verticalLayout_4->addWidget(label_2);
+        verticalLayout_4->addWidget(address1_label);
 
-        label_3 = new QLabel(groupBox);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setFont(font1);
+        comendant1_label = new QLabel(dormitory1_groupbox);
+        comendant1_label->setObjectName(QString::fromUtf8("comendant1_label"));
+        comendant1_label->setFont(font1);
 
-        verticalLayout_4->addWidget(label_3);
+        verticalLayout_4->addWidget(comendant1_label);
 
         verticalSpacer = new QSpacerItem(20, 10, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
         verticalLayout_4->addItem(verticalSpacer);
 
-        label_4 = new QLabel(groupBox);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
+        building11_label = new QLabel(dormitory1_groupbox);
+        building11_label->setObjectName(QString::fromUtf8("building11_label"));
         QFont font2;
         font2.setPointSize(12);
         font2.setBold(true);
         font2.setWeight(75);
-        label_4->setFont(font2);
+        building11_label->setFont(font2);
 
-        verticalLayout_4->addWidget(label_4);
+        verticalLayout_4->addWidget(building11_label);
 
-        label_5 = new QLabel(groupBox);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setFont(font1);
+        room_amount11_label = new QLabel(dormitory1_groupbox);
+        room_amount11_label->setObjectName(QString::fromUtf8("room_amount11_label"));
+        room_amount11_label->setFont(font1);
 
-        verticalLayout_4->addWidget(label_5);
+        verticalLayout_4->addWidget(room_amount11_label);
 
         verticalSpacer_2 = new QSpacerItem(20, 10, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
         verticalLayout_4->addItem(verticalSpacer_2);
 
-        label_6 = new QLabel(groupBox);
-        label_6->setObjectName(QString::fromUtf8("label_6"));
-        label_6->setFont(font2);
+        building12_label = new QLabel(dormitory1_groupbox);
+        building12_label->setObjectName(QString::fromUtf8("building12_label"));
+        building12_label->setFont(font2);
 
-        verticalLayout_4->addWidget(label_6);
+        verticalLayout_4->addWidget(building12_label);
 
-        label_7 = new QLabel(groupBox);
-        label_7->setObjectName(QString::fromUtf8("label_7"));
-        label_7->setFont(font1);
+        room_amount12_label = new QLabel(dormitory1_groupbox);
+        room_amount12_label->setObjectName(QString::fromUtf8("room_amount12_label"));
+        room_amount12_label->setFont(font1);
 
-        verticalLayout_4->addWidget(label_7);
+        verticalLayout_4->addWidget(room_amount12_label);
 
 
-        verticalLayout_2->addWidget(groupBox);
+        verticalLayout_2->addWidget(dormitory1_groupbox);
 
         verticalSpacer_7 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
@@ -163,58 +163,58 @@ public:
 
         verticalLayout_3->addItem(verticalSpacer_6);
 
-        groupBox_2 = new QGroupBox(MainVisiter);
-        groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
-        groupBox_2->setMinimumSize(QSize(0, 0));
-        groupBox_2->setFont(font);
-        verticalLayout_5 = new QVBoxLayout(groupBox_2);
+        dormitory2_groupbox = new QGroupBox(MainVisiter);
+        dormitory2_groupbox->setObjectName(QString::fromUtf8("dormitory2_groupbox"));
+        dormitory2_groupbox->setMinimumSize(QSize(0, 0));
+        dormitory2_groupbox->setFont(font);
+        verticalLayout_5 = new QVBoxLayout(dormitory2_groupbox);
         verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
-        label_8 = new QLabel(groupBox_2);
-        label_8->setObjectName(QString::fromUtf8("label_8"));
-        label_8->setFont(font1);
+        address2_label = new QLabel(dormitory2_groupbox);
+        address2_label->setObjectName(QString::fromUtf8("address2_label"));
+        address2_label->setFont(font1);
 
-        verticalLayout_5->addWidget(label_8);
+        verticalLayout_5->addWidget(address2_label);
 
-        label_9 = new QLabel(groupBox_2);
-        label_9->setObjectName(QString::fromUtf8("label_9"));
-        label_9->setFont(font1);
+        comendant2_label = new QLabel(dormitory2_groupbox);
+        comendant2_label->setObjectName(QString::fromUtf8("comendant2_label"));
+        comendant2_label->setFont(font1);
 
-        verticalLayout_5->addWidget(label_9);
+        verticalLayout_5->addWidget(comendant2_label);
 
         verticalSpacer_3 = new QSpacerItem(20, 10, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
         verticalLayout_5->addItem(verticalSpacer_3);
 
-        label_10 = new QLabel(groupBox_2);
-        label_10->setObjectName(QString::fromUtf8("label_10"));
-        label_10->setFont(font2);
+        building21_label = new QLabel(dormitory2_groupbox);
+        building21_label->setObjectName(QString::fromUtf8("building21_label"));
+        building21_label->setFont(font2);
 
-        verticalLayout_5->addWidget(label_10);
+        verticalLayout_5->addWidget(building21_label);
 
-        label_11 = new QLabel(groupBox_2);
-        label_11->setObjectName(QString::fromUtf8("label_11"));
-        label_11->setFont(font1);
+        room_amount21_label = new QLabel(dormitory2_groupbox);
+        room_amount21_label->setObjectName(QString::fromUtf8("room_amount21_label"));
+        room_amount21_label->setFont(font1);
 
-        verticalLayout_5->addWidget(label_11);
+        verticalLayout_5->addWidget(room_amount21_label);
 
         verticalSpacer_4 = new QSpacerItem(20, 10, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
         verticalLayout_5->addItem(verticalSpacer_4);
 
-        label_12 = new QLabel(groupBox_2);
-        label_12->setObjectName(QString::fromUtf8("label_12"));
-        label_12->setFont(font2);
+        building22_label = new QLabel(dormitory2_groupbox);
+        building22_label->setObjectName(QString::fromUtf8("building22_label"));
+        building22_label->setFont(font2);
 
-        verticalLayout_5->addWidget(label_12);
+        verticalLayout_5->addWidget(building22_label);
 
-        label_13 = new QLabel(groupBox_2);
-        label_13->setObjectName(QString::fromUtf8("label_13"));
-        label_13->setFont(font1);
+        room_amount22_label = new QLabel(dormitory2_groupbox);
+        room_amount22_label->setObjectName(QString::fromUtf8("room_amount22_label"));
+        room_amount22_label->setFont(font1);
 
-        verticalLayout_5->addWidget(label_13);
+        verticalLayout_5->addWidget(room_amount22_label);
 
 
-        verticalLayout_3->addWidget(groupBox_2);
+        verticalLayout_3->addWidget(dormitory2_groupbox);
 
         verticalSpacer_8 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
@@ -251,12 +251,12 @@ public:
 
         verticalLayout->addLayout(horizontalLayout);
 
-        label = new QLabel(MainVisiter);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setMinimumSize(QSize(0, 10));
-        label->setMaximumSize(QSize(16777215, 10));
+        state_label = new QLabel(MainVisiter);
+        state_label->setObjectName(QString::fromUtf8("state_label"));
+        state_label->setMinimumSize(QSize(0, 10));
+        state_label->setMaximumSize(QSize(16777215, 10));
 
-        verticalLayout->addWidget(label);
+        verticalLayout->addWidget(state_label);
 
 
         retranslateUi(MainVisiter);
@@ -267,25 +267,25 @@ public:
     void retranslateUi(QWidget *MainVisiter)
     {
         MainVisiter->setWindowTitle(QApplication::translate("MainVisiter", "\320\223\320\276\321\201\321\202\321\214", nullptr));
-        groupBox->setTitle(QApplication::translate("MainVisiter", "\320\236\320\261\321\211\320\265\320\266\320\270\321\202\320\270\320\265 \342\204\226 0", nullptr));
-        label_2->setText(QApplication::translate("MainVisiter", "\320\220\320\264\321\200\320\265\321\201: ", nullptr));
-        label_3->setText(QApplication::translate("MainVisiter", "\320\232\320\276\320\274\320\265\320\275\320\264\320\260\320\275\321\202:", nullptr));
-        label_4->setText(QApplication::translate("MainVisiter", "\320\232\320\276\321\200\320\277\321\203\321\201 \342\204\226 0", nullptr));
-        label_5->setText(QApplication::translate("MainVisiter", "\320\232\320\276\320\273\320\270\321\207\320\265\321\201\321\202\320\262\320\276 \321\201\320\262\320\276\320\261\320\276\320\264\320\275\321\213\321\205 \320\272\320\276\320\274\320\275\320\260\321\202: ", nullptr));
-        label_6->setText(QApplication::translate("MainVisiter", "\320\232\320\276\321\200\320\277\321\203\321\201 \342\204\226 0", nullptr));
-        label_7->setText(QApplication::translate("MainVisiter", "\320\232\320\276\320\273\320\270\321\207\320\265\321\201\321\202\320\262\320\276 \321\201\320\262\320\276\320\261\320\276\320\264\320\275\321\213\321\205 \320\272\320\276\320\274\320\275\320\260\321\202: ", nullptr));
-        groupBox_2->setTitle(QApplication::translate("MainVisiter", "\320\236\320\261\321\211\320\265\320\266\320\270\321\202\320\270\320\265 \342\204\226 0", nullptr));
-        label_8->setText(QApplication::translate("MainVisiter", "\320\220\320\264\321\200\320\265\321\201: ", nullptr));
-        label_9->setText(QApplication::translate("MainVisiter", "\320\232\320\276\320\274\320\265\320\275\320\264\320\260\320\275\321\202:", nullptr));
-        label_10->setText(QApplication::translate("MainVisiter", "\320\232\320\276\321\200\320\277\321\203\321\201 \342\204\226 0", nullptr));
-        label_11->setText(QApplication::translate("MainVisiter", "\320\232\320\276\320\273\320\270\321\207\320\265\321\201\321\202\320\262\320\276 \321\201\320\262\320\276\320\261\320\276\320\264\320\275\321\213\321\205 \320\272\320\276\320\274\320\275\320\260\321\202:", nullptr));
-        label_12->setText(QApplication::translate("MainVisiter", "\320\232\320\276\321\200\320\277\321\203\321\201 \342\204\226 0", nullptr));
-        label_13->setText(QApplication::translate("MainVisiter", "\320\232\320\276\320\273\320\270\321\207\320\265\321\201\321\202\320\262\320\276 \321\201\320\262\320\276\320\261\320\276\320\264\320\275\321\213\321\205 \320\272\320\276\320\274\320\275\320\260\321\202: ", nullptr));
+        dormitory1_groupbox->setTitle(QApplication::translate("MainVisiter", "\320\236\320\261\321\211\320\265\320\266\320\270\321\202\320\270\320\265 \342\204\226 0", nullptr));
+        address1_label->setText(QApplication::translate("MainVisiter", "\320\220\320\264\321\200\320\265\321\201: ", nullptr));
+        comendant1_label->setText(QApplication::translate("MainVisiter", "\320\232\320\276\320\274\320\265\320\275\320\264\320\260\320\275\321\202:", nullptr));
+        building11_label->setText(QApplication::translate("MainVisiter", "\320\232\320\276\321\200\320\277\321\203\321\201 \342\204\226 0", nullptr));
+        room_amount11_label->setText(QApplication::translate("MainVisiter", "\320\232\320\276\320\273\320\270\321\207\320\265\321\201\321\202\320\262\320\276 \321\201\320\262\320\276\320\261\320\276\320\264\320\275\321\213\321\205 \320\272\320\276\320\274\320\275\320\260\321\202: ", nullptr));
+        building12_label->setText(QApplication::translate("MainVisiter", "\320\232\320\276\321\200\320\277\321\203\321\201 \342\204\226 0", nullptr));
+        room_amount12_label->setText(QApplication::translate("MainVisiter", "\320\232\320\276\320\273\320\270\321\207\320\265\321\201\321\202\320\262\320\276 \321\201\320\262\320\276\320\261\320\276\320\264\320\275\321\213\321\205 \320\272\320\276\320\274\320\275\320\260\321\202: ", nullptr));
+        dormitory2_groupbox->setTitle(QApplication::translate("MainVisiter", "\320\236\320\261\321\211\320\265\320\266\320\270\321\202\320\270\320\265 \342\204\226 0", nullptr));
+        address2_label->setText(QApplication::translate("MainVisiter", "\320\220\320\264\321\200\320\265\321\201: ", nullptr));
+        comendant2_label->setText(QApplication::translate("MainVisiter", "\320\232\320\276\320\274\320\265\320\275\320\264\320\260\320\275\321\202:", nullptr));
+        building21_label->setText(QApplication::translate("MainVisiter", "\320\232\320\276\321\200\320\277\321\203\321\201 \342\204\226 0", nullptr));
+        room_amount21_label->setText(QApplication::translate("MainVisiter", "\320\232\320\276\320\273\320\270\321\207\320\265\321\201\321\202\320\262\320\276 \321\201\320\262\320\276\320\261\320\276\320\264\320\275\321\213\321\205 \320\272\320\276\320\274\320\275\320\260\321\202:", nullptr));
+        building22_label->setText(QApplication::translate("MainVisiter", "\320\232\320\276\321\200\320\277\321\203\321\201 \342\204\226 0", nullptr));
+        room_amount22_label->setText(QApplication::translate("MainVisiter", "\320\232\320\276\320\273\320\270\321\207\320\265\321\201\321\202\320\262\320\276 \321\201\320\262\320\276\320\261\320\276\320\264\320\275\321\213\321\205 \320\272\320\276\320\274\320\275\320\260\321\202: ", nullptr));
 #ifndef QT_NO_TOOLTIP
         pushButton->setToolTip(QApplication::translate("MainVisiter", "\320\227\320\260\320\277\320\276\320\273\320\275\320\270\321\202\321\214 \320\270 \320\276\321\202\320\277\321\200\320\260\320\262\320\270\321\202\321\214 \320\267\320\260\321\217\320\262\320\272\321\203 \320\275\320\260 \320\267\320\260\321\201\320\265\320\273\320\265\320\275\320\270\320\265", nullptr));
 #endif // QT_NO_TOOLTIP
         pushButton->setText(QApplication::translate("MainVisiter", "\320\241\320\264\320\265\320\273\320\260\321\202\321\214 \320\267\320\260\321\217\320\262\320\272\321\203", nullptr));
-        label->setText(QApplication::translate("MainVisiter", "\320\223\320\276\321\201\321\202\321\214: \320\223\320\273\320\260\320\262\320\275\320\260\321\217", nullptr));
+        state_label->setText(QApplication::translate("MainVisiter", "\320\223\320\276\321\201\321\202\321\214: \320\223\320\273\320\260\320\262\320\275\320\260\321\217", nullptr));
     } // retranslateUi
 
 };

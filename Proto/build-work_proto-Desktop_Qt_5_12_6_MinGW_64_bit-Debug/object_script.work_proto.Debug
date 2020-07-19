@@ -5,6 +5,7 @@ debug/mainwindow.o
 debug/makerequest.o
 debug/managedatabase.o
 debug/redactdata.o
+debug/redacthuman.o
 debug/requests.o
 debug/seekbyname.o
 debug/view.o
@@ -14,6 +15,7 @@ debug/moc_mainwindow.o
 debug/moc_makerequest.o
 debug/moc_managedatabase.o
 debug/moc_redactdata.o
+debug/moc_redacthuman.o
 debug/moc_requests.o
 debug/moc_seekbyname.o
 debug/moc_view.o

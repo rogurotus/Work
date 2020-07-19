@@ -16,6 +16,9 @@ public:
     explicit Requests(QWidget *parent = nullptr);
     ~Requests();
 
+public slots:
+    void setTitle(QString name);
+
 private:
     Ui::Requests *ui;
 };

@@ -27,22 +27,22 @@ class Ui_MakeRequest
 {
 public:
     QVBoxLayout *verticalLayout;
-    QLabel *label;
-    QLineEdit *lineEdit;
-    QLabel *label_2;
-    QLineEdit *lineEdit_2;
-    QLabel *label_3;
-    QLineEdit *lineEdit_3;
-    QGroupBox *groupBox;
+    QLabel *surname_label;
+    QLineEdit *surname_edit;
+    QLabel *name_label;
+    QLineEdit *name_edit;
+    QLabel *patronymic_label;
+    QLineEdit *patronymic_edit;
+    QGroupBox *status_groupbox;
     QVBoxLayout *verticalLayout_2;
-    QRadioButton *radioButton;
-    QRadioButton *radioButton_2;
-    QLabel *label_4;
-    QLineEdit *lineEdit_4;
-    QLabel *label_5;
-    QLineEdit *lineEdit_5;
-    QLabel *label_6;
-    QLineEdit *lineEdit_6;
+    QRadioButton *student_radio;
+    QRadioButton *sotrudnik_radio;
+    QLabel *group_work_label;
+    QLineEdit *group_work_edit;
+    QLabel *phone_label;
+    QLineEdit *phone_edit;
+    QLabel *mail_label;
+    QLineEdit *mail_edit;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer;
     QPushButton *pushButton;
@@ -57,83 +57,83 @@ public:
         MakeRequest->setMaximumSize(QSize(470, 450));
         verticalLayout = new QVBoxLayout(MakeRequest);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        label = new QLabel(MakeRequest);
-        label->setObjectName(QString::fromUtf8("label"));
+        surname_label = new QLabel(MakeRequest);
+        surname_label->setObjectName(QString::fromUtf8("surname_label"));
 
-        verticalLayout->addWidget(label);
+        verticalLayout->addWidget(surname_label);
 
-        lineEdit = new QLineEdit(MakeRequest);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        surname_edit = new QLineEdit(MakeRequest);
+        surname_edit->setObjectName(QString::fromUtf8("surname_edit"));
 
-        verticalLayout->addWidget(lineEdit);
+        verticalLayout->addWidget(surname_edit);
 
-        label_2 = new QLabel(MakeRequest);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
+        name_label = new QLabel(MakeRequest);
+        name_label->setObjectName(QString::fromUtf8("name_label"));
 
-        verticalLayout->addWidget(label_2);
+        verticalLayout->addWidget(name_label);
 
-        lineEdit_2 = new QLineEdit(MakeRequest);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
+        name_edit = new QLineEdit(MakeRequest);
+        name_edit->setObjectName(QString::fromUtf8("name_edit"));
 
-        verticalLayout->addWidget(lineEdit_2);
+        verticalLayout->addWidget(name_edit);
 
-        label_3 = new QLabel(MakeRequest);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
+        patronymic_label = new QLabel(MakeRequest);
+        patronymic_label->setObjectName(QString::fromUtf8("patronymic_label"));
 
-        verticalLayout->addWidget(label_3);
+        verticalLayout->addWidget(patronymic_label);
 
-        lineEdit_3 = new QLineEdit(MakeRequest);
-        lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
+        patronymic_edit = new QLineEdit(MakeRequest);
+        patronymic_edit->setObjectName(QString::fromUtf8("patronymic_edit"));
 
-        verticalLayout->addWidget(lineEdit_3);
+        verticalLayout->addWidget(patronymic_edit);
 
-        groupBox = new QGroupBox(MakeRequest);
-        groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        groupBox->setMinimumSize(QSize(0, 80));
-        verticalLayout_2 = new QVBoxLayout(groupBox);
+        status_groupbox = new QGroupBox(MakeRequest);
+        status_groupbox->setObjectName(QString::fromUtf8("status_groupbox"));
+        status_groupbox->setMinimumSize(QSize(0, 80));
+        verticalLayout_2 = new QVBoxLayout(status_groupbox);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        radioButton = new QRadioButton(groupBox);
-        radioButton->setObjectName(QString::fromUtf8("radioButton"));
+        student_radio = new QRadioButton(status_groupbox);
+        student_radio->setObjectName(QString::fromUtf8("student_radio"));
 
-        verticalLayout_2->addWidget(radioButton);
+        verticalLayout_2->addWidget(student_radio);
 
-        radioButton_2 = new QRadioButton(groupBox);
-        radioButton_2->setObjectName(QString::fromUtf8("radioButton_2"));
+        sotrudnik_radio = new QRadioButton(status_groupbox);
+        sotrudnik_radio->setObjectName(QString::fromUtf8("sotrudnik_radio"));
 
-        verticalLayout_2->addWidget(radioButton_2);
+        verticalLayout_2->addWidget(sotrudnik_radio);
 
 
-        verticalLayout->addWidget(groupBox);
+        verticalLayout->addWidget(status_groupbox);
 
-        label_4 = new QLabel(MakeRequest);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
+        group_work_label = new QLabel(MakeRequest);
+        group_work_label->setObjectName(QString::fromUtf8("group_work_label"));
 
-        verticalLayout->addWidget(label_4);
+        verticalLayout->addWidget(group_work_label);
 
-        lineEdit_4 = new QLineEdit(MakeRequest);
-        lineEdit_4->setObjectName(QString::fromUtf8("lineEdit_4"));
+        group_work_edit = new QLineEdit(MakeRequest);
+        group_work_edit->setObjectName(QString::fromUtf8("group_work_edit"));
 
-        verticalLayout->addWidget(lineEdit_4);
+        verticalLayout->addWidget(group_work_edit);
 
-        label_5 = new QLabel(MakeRequest);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
+        phone_label = new QLabel(MakeRequest);
+        phone_label->setObjectName(QString::fromUtf8("phone_label"));
 
-        verticalLayout->addWidget(label_5);
+        verticalLayout->addWidget(phone_label);
 
-        lineEdit_5 = new QLineEdit(MakeRequest);
-        lineEdit_5->setObjectName(QString::fromUtf8("lineEdit_5"));
+        phone_edit = new QLineEdit(MakeRequest);
+        phone_edit->setObjectName(QString::fromUtf8("phone_edit"));
 
-        verticalLayout->addWidget(lineEdit_5);
+        verticalLayout->addWidget(phone_edit);
 
-        label_6 = new QLabel(MakeRequest);
-        label_6->setObjectName(QString::fromUtf8("label_6"));
+        mail_label = new QLabel(MakeRequest);
+        mail_label->setObjectName(QString::fromUtf8("mail_label"));
 
-        verticalLayout->addWidget(label_6);
+        verticalLayout->addWidget(mail_label);
 
-        lineEdit_6 = new QLineEdit(MakeRequest);
-        lineEdit_6->setObjectName(QString::fromUtf8("lineEdit_6"));
+        mail_edit = new QLineEdit(MakeRequest);
+        mail_edit->setObjectName(QString::fromUtf8("mail_edit"));
 
-        verticalLayout->addWidget(lineEdit_6);
+        verticalLayout->addWidget(mail_edit);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
@@ -162,15 +162,15 @@ public:
     void retranslateUi(QWidget *MakeRequest)
     {
         MakeRequest->setWindowTitle(QApplication::translate("MakeRequest", "\320\227\320\260\320\277\320\276\320\273\320\275\320\265\320\275\320\270\320\265 \320\267\320\260\321\217\320\262\320\272\320\270 \320\275\320\260 \320\267\320\260\321\201\320\265\320\273\320\265\320\275\320\270\320\265", nullptr));
-        label->setText(QApplication::translate("MakeRequest", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \321\204\320\260\320\274\320\270\320\273\320\270\321\216", nullptr));
-        label_2->setText(QApplication::translate("MakeRequest", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\270\320\274\321\217", nullptr));
-        label_3->setText(QApplication::translate("MakeRequest", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\276\321\202\321\207\320\265\321\201\321\202\320\262\320\276 (\320\277\321\200\320\270 \320\276\321\202\321\201\321\203\321\202\321\201\321\202\320\262\320\270\320\270 \320\274\320\276\320\266\320\275\320\276 \320\276\320\277\321\203\321\201\321\202\320\270\321\202\321\214)", nullptr));
-        groupBox->setTitle(QApplication::translate("MakeRequest", "\320\222\321\213 \321\201\321\202\321\203\320\264\320\265\320\275\321\202 \320\270\320\273\320\270 \321\201\320\276\321\202\321\200\321\203\320\264\320\275\320\270\320\272?", nullptr));
-        radioButton->setText(QApplication::translate("MakeRequest", "\320\241\321\202\321\203\320\264\320\265\320\275\321\202", nullptr));
-        radioButton_2->setText(QApplication::translate("MakeRequest", "\320\241\320\276\321\202\321\200\321\203\320\264\320\275\320\270\320\272", nullptr));
-        label_4->setText(QApplication::translate("MakeRequest", "\320\225\321\201\320\273\320\270 \320\262\321\213 \321\201\321\202\321\203\320\264\320\265\320\275\321\202, \321\203\320\272\320\260\320\266\320\270\321\202\320\265 \320\262\320\260\321\210\321\203 \320\263\321\200\321\203\320\277\320\277\321\203. \320\225\321\201\320\273\320\270 \320\262\321\213 \321\201\320\276\321\202\321\200\321\203\320\264\320\275\320\270\320\272, \321\203\320\272\320\260\320\266\320\270\321\202\320\265 \320\262\320\260\321\210\321\203 \320\264\320\276\320\273\320\266\320\275\320\276\321\201\321\202\321\214.", nullptr));
-        label_5->setText(QApplication::translate("MakeRequest", "\320\243\320\272\320\260\320\266\320\270\321\202\320\265 \320\262\320\260\321\210 \320\275\320\276\320\274\320\265\321\200 \321\202\320\265\320\273\320\265\321\204\320\276\320\275\320\260", nullptr));
-        label_6->setText(QApplication::translate("MakeRequest", "\320\243\320\272\320\260\320\266\320\270\321\202\320\265 \320\262\320\260\321\210 \320\260\320\264\321\200\320\265\321\201 \321\215\320\273\320\265\320\274\321\202\321\200\320\276\320\275\320\275\320\276\320\271 \320\277\320\276\321\207\321\202\321\213", nullptr));
+        surname_label->setText(QApplication::translate("MakeRequest", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \321\204\320\260\320\274\320\270\320\273\320\270\321\216", nullptr));
+        name_label->setText(QApplication::translate("MakeRequest", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\270\320\274\321\217", nullptr));
+        patronymic_label->setText(QApplication::translate("MakeRequest", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\276\321\202\321\207\320\265\321\201\321\202\320\262\320\276 (\320\277\321\200\320\270 \320\276\321\202\321\201\321\203\321\202\321\201\321\202\320\262\320\270\320\270 \320\274\320\276\320\266\320\275\320\276 \320\276\320\277\321\203\321\201\321\202\320\270\321\202\321\214)", nullptr));
+        status_groupbox->setTitle(QApplication::translate("MakeRequest", "\320\222\321\213 \321\201\321\202\321\203\320\264\320\265\320\275\321\202 \320\270\320\273\320\270 \321\201\320\276\321\202\321\200\321\203\320\264\320\275\320\270\320\272?", nullptr));
+        student_radio->setText(QApplication::translate("MakeRequest", "\320\241\321\202\321\203\320\264\320\265\320\275\321\202", nullptr));
+        sotrudnik_radio->setText(QApplication::translate("MakeRequest", "\320\241\320\276\321\202\321\200\321\203\320\264\320\275\320\270\320\272", nullptr));
+        group_work_label->setText(QApplication::translate("MakeRequest", "\320\225\321\201\320\273\320\270 \320\262\321\213 \321\201\321\202\321\203\320\264\320\265\320\275\321\202, \321\203\320\272\320\260\320\266\320\270\321\202\320\265 \320\262\320\260\321\210\321\203 \320\263\321\200\321\203\320\277\320\277\321\203. \320\225\321\201\320\273\320\270 \320\262\321\213 \321\201\320\276\321\202\321\200\321\203\320\264\320\275\320\270\320\272, \321\203\320\272\320\260\320\266\320\270\321\202\320\265 \320\262\320\260\321\210\321\203 \320\264\320\276\320\273\320\266\320\275\320\276\321\201\321\202\321\214.", nullptr));
+        phone_label->setText(QApplication::translate("MakeRequest", "\320\243\320\272\320\260\320\266\320\270\321\202\320\265 \320\262\320\260\321\210 \320\275\320\276\320\274\320\265\321\200 \321\202\320\265\320\273\320\265\321\204\320\276\320\275\320\260", nullptr));
+        mail_label->setText(QApplication::translate("MakeRequest", "\320\243\320\272\320\260\320\266\320\270\321\202\320\265 \320\262\320\260\321\210 \320\260\320\264\321\200\320\265\321\201 \321\215\320\273\320\265\320\274\321\202\321\200\320\276\320\275\320\275\320\276\320\271 \320\277\320\276\321\207\321\202\321\213", nullptr));
 #ifndef QT_NO_TOOLTIP
         pushButton->setToolTip(QApplication::translate("MakeRequest", "\320\235\320\260\320\266\320\274\320\270\321\202\320\265, \321\207\321\202\320\276\320\261\321\213 \320\276\321\202\320\277\321\200\320\260\320\262\320\270\321\202\321\214 \320\267\320\260\321\217\320\262\320\272\321\203 \320\275\320\260 \321\200\320\260\321\201\321\201\320\274\320\276\321\202\321\200\320\265\320\275\320\270\320\265.", nullptr));
 #endif // QT_NO_TOOLTIP

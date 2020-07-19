@@ -1,5 +1,6 @@
 #include "view.h"
 #include "ui_view.h"
+#include <QDate>
 
 View::View(QWidget *parent) :
     QWidget(parent),
@@ -16,4 +17,7 @@ View::~View()
 void View::set_model(QSqlQueryModel *model)
 {
     ui->tableView->setModel(model);
+void View::setTitle(QString name){
+    QDate cDate = QDate::currentDate();
+    ui->state_label->setText("Комендант: Главная->" + name + cDate.toString());
 }

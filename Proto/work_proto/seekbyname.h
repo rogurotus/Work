@@ -15,6 +15,9 @@ public:
     explicit SeekByName(QWidget *parent = nullptr);
     ~SeekByName();
 
+public slots:
+    void setTitle(QString name);
+
 private slots:
     void on_Enter_FIO_clicked();
 

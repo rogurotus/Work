@@ -17,6 +17,9 @@ public:
     ~View();
     void set_model(QSqlQueryModel *model);
 
+public slots:
+    void setTitle(QString name);
+
 private:
     Ui::View *ui;
 };
