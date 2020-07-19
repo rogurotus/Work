@@ -253,20 +253,7 @@
       </layout>
      </item>
      <item>
-      <widget class="QSpinBox" name="room_number_spinbox">
-       <property name="minimumSize">
-        <size>
-         <width>100</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>999</width>
-         <height>16777215</height>
-        </size>
-       </property>
-      </widget>
+      <widget class="QComboBox" name="room_combobox"/>
      </item>
     </layout>
    </item>
@@ -301,20 +288,7 @@
       </layout>
      </item>
      <item>
-      <widget class="QSpinBox" name="building_number_spinbox">
-       <property name="minimumSize">
-        <size>
-         <width>100</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>999</width>
-         <height>16777215</height>
-        </size>
-       </property>
-      </widget>
+      <widget class="QComboBox" name="building_combobox"/>
      </item>
     </layout>
    </item>

@@ -11,12 +11,12 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
-#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -42,11 +42,11 @@ public:
     QHBoxLayout *horizontalLayout_8;
     QHBoxLayout *horizontalLayout_7;
     QLabel *room_number_label;
-    QSpinBox *room_number_spinbox;
+    QComboBox *room_combobox;
     QHBoxLayout *horizontalLayout_9;
     QHBoxLayout *horizontalLayout_6;
     QLabel *building_number_label;
-    QSpinBox *building_number_spinbox;
+    QComboBox *building_combobox;
     QSpacerItem *verticalSpacer_3;
     QHBoxLayout *horizontalLayout_3;
     QLabel *phine_label;
@@ -165,12 +165,10 @@ public:
 
         horizontalLayout_8->addLayout(horizontalLayout_7);
 
-        room_number_spinbox = new QSpinBox(RedactHuman);
-        room_number_spinbox->setObjectName(QString::fromUtf8("room_number_spinbox"));
-        room_number_spinbox->setMinimumSize(QSize(100, 0));
-        room_number_spinbox->setMaximumSize(QSize(999, 16777215));
+        room_combobox = new QComboBox(RedactHuman);
+        room_combobox->setObjectName(QString::fromUtf8("room_combobox"));
 
-        horizontalLayout_8->addWidget(room_number_spinbox);
+        horizontalLayout_8->addWidget(room_combobox);
 
 
         verticalLayout->addLayout(horizontalLayout_8);
@@ -190,12 +188,10 @@ public:
 
         horizontalLayout_9->addLayout(horizontalLayout_6);
 
-        building_number_spinbox = new QSpinBox(RedactHuman);
-        building_number_spinbox->setObjectName(QString::fromUtf8("building_number_spinbox"));
-        building_number_spinbox->setMinimumSize(QSize(100, 0));
-        building_number_spinbox->setMaximumSize(QSize(999, 16777215));
+        building_combobox = new QComboBox(RedactHuman);
+        building_combobox->setObjectName(QString::fromUtf8("building_combobox"));
 
-        horizontalLayout_9->addWidget(building_number_spinbox);
+        horizontalLayout_9->addWidget(building_combobox);
 
 
         verticalLayout->addLayout(horizontalLayout_9);

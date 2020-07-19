@@ -23,6 +23,8 @@ MakeRequest::MakeRequest(QWidget *parent) :
     QRegExp mailRx("^[A-Z a-z 0-9 @ _ \\.]{0,255}$");
     QValidator *validator = new QRegExpValidator(mailRx, this);
     ui->mail_edit->setValidator(validator);
+
+    ui->student_radio->setChecked(true);
 }
 
 MakeRequest::~MakeRequest()
@@ -38,8 +40,7 @@ void MakeRequest::on_pushButton_clicked()
             ui->name_edit->text().length() != 0 &&
             ui->phone_edit->text().length() != 0 &&
             ui->mail_edit->text().length() != 0 &&
-            ui->group_work_edit->text().length() != 0 &&
-            (ui->student_radio->isChecked() || ui->sotrudnik_radio->isChecked()))
+            ui->group_work_edit->text().length() != 0)
     {
 
         if(ui->phone_edit->text().length() == 17 && isMail(ui->mail_edit->text()))
