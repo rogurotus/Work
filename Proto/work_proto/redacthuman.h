@@ -20,8 +20,6 @@ signals:
 
 private slots:
     void on_redacted_clicked();
-
-    bool isMail(QString mail);
     bool isData(QString data);
 
 private:

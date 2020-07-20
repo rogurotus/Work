@@ -169,9 +169,21 @@ public:
     {
         SeekByName->setWindowTitle(QApplication::translate("SeekByName", "Form", nullptr));
         surname_label->setText(QApplication::translate("SeekByName", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \321\204\320\260\320\274\320\270\320\273\320\270\321\216", nullptr));
+#ifndef QT_NO_TOOLTIP
+        surname_edit->setToolTip(QApplication::translate("SeekByName", "\320\237\320\276\320\270\321\201\320\272 \320\277\320\276 \321\204\320\260\320\274\320\270\320\273\320\270\320\270.", nullptr));
+#endif // QT_NO_TOOLTIP
         surname_edit->setText(QString());
         name_label->setText(QApplication::translate("SeekByName", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\270\320\274\321\217", nullptr));
+#ifndef QT_NO_TOOLTIP
+        name_edit->setToolTip(QApplication::translate("SeekByName", "\320\237\320\276\320\270\321\201\320\272 \320\277\320\276 \320\270\320\274\320\265\320\275\320\270.", nullptr));
+#endif // QT_NO_TOOLTIP
         patronymic_label->setText(QApplication::translate("SeekByName", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\276\321\202\321\207\320\265\321\201\321\202\320\262\320\276", nullptr));
+#ifndef QT_NO_TOOLTIP
+        patronymic_edit->setToolTip(QApplication::translate("SeekByName", "\320\237\320\276\320\270\321\201\320\272 \320\277\320\276 \320\276\321\202\321\207\320\265\321\201\321\202\320\262\321\203.", nullptr));
+#endif // QT_NO_TOOLTIP
+#ifndef QT_NO_TOOLTIP
+        Enter_FIO->setToolTip(QApplication::translate("SeekByName", "\320\230\321\201\320\272\320\260\321\202\321\214 \320\277\320\276 \320\267\320\260\320\277\320\276\320\273\320\275\320\265\320\275\320\275\321\213\320\274 \320\277\320\276\320\273\321\217\320\274.", nullptr));
+#endif // QT_NO_TOOLTIP
         Enter_FIO->setText(QApplication::translate("SeekByName", "\320\236\320\272", nullptr));
         state_label->setText(QApplication::translate("SeekByName", "\320\232\320\276\320\274\320\265\320\275\320\264\320\260\320\275\321\202:", nullptr));
     } // retranslateUi

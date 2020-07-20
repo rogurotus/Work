@@ -27,18 +27,6 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QLabel" name="name_label">
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Имя</string>
-     </property>
-    </widget>
-   </item>
-   <item>
     <widget class="QLabel" name="surname_label">
      <property name="font">
       <font>
@@ -47,6 +35,18 @@
      </property>
      <property name="text">
       <string>Фамилия</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="name_label">
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Имя</string>
      </property>
     </widget>
    </item>
@@ -117,6 +117,9 @@
          <width>999</width>
          <height>16777215</height>
         </size>
+       </property>
+       <property name="toolTip">
+        <string>Укажите должность или группу.</string>
        </property>
       </widget>
      </item>
@@ -223,41 +226,6 @@
     </spacer>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_8">
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_7">
-       <item>
-        <widget class="QLabel" name="room_number_label">
-         <property name="minimumSize">
-          <size>
-           <width>150</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>150</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>Номер комнаты</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <widget class="QComboBox" name="room_combobox"/>
-     </item>
-    </layout>
-   </item>
-   <item>
     <layout class="QHBoxLayout" name="horizontalLayout_9">
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_6">
@@ -289,6 +257,41 @@
      </item>
      <item>
       <widget class="QComboBox" name="building_combobox"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_8">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_7">
+       <item>
+        <widget class="QLabel" name="room_number_label">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>150</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Номер комнаты</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QComboBox" name="room_combobox"/>
      </item>
     </layout>
    </item>
@@ -445,6 +448,9 @@
      </item>
      <item>
       <widget class="QPushButton" name="redacted">
+       <property name="toolTip">
+        <string>Редактировать данные.</string>
+       </property>
        <property name="text">
         <string>Редактировать</string>
        </property>

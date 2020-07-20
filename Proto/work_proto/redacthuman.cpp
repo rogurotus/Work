@@ -25,8 +25,9 @@ RedactHuman::~RedactHuman()
 void RedactHuman::on_redacted_clicked()
 {
     //Принять изменения
+    QRegExp reg = QRegExp("^[A-Za-z0-9_]{1,100}[@]{1}[A-Za-z0-9_]{1,100}[\\.]{1}[A-Za-z0-9_]{1,100}$");
     if(ui->phone_edit->text().length() == 17 &&
-            isMail(ui->mail_edit->text()) &&
+            reg.exactMatch(ui->mail_edit->text()) &&
             isData(ui->data_out_edit->text()) &&
             ui->status_edit->text().length() != 0)
     {
@@ -39,40 +40,6 @@ void RedactHuman::on_redacted_clicked()
     {
         QMessageBox::information(NULL,QObject::tr("Важно!"),tr("Введены некорректные данные!"));
     }
-}
-
-bool RedactHuman::isMail(QString mail){
-    bool Flet, Odog, notDot, Odot, lastCh;
-
-    if (mail[0] != "." && mail[0] != "@")
-        Flet = true;
-    else
-        Flet = false;
-
-    if(mail.count("@") == 1)
-        Odog = true;
-    else
-        Odog = false;
-
-    if(mail[mail.indexOf("@") + 1] != ".")
-        notDot = true;
-    else
-        notDot = false;
-
-    if(mail.count(".") == 1 && (mail.indexOf(".") > mail.indexOf("@")))
-        Odot = true;
-    else
-        Odot = false;
-
-    if(mail.indexOf(".") < mail.length() - 1)
-        lastCh = true;
-    else
-        lastCh = false;
-
-    if(Flet && Odog && notDot && Odot && lastCh)
-        return true;
-    else
-        return false;
 }
 
 bool RedactHuman::isData(QString data){

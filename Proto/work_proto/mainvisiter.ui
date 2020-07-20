@@ -422,7 +422,7 @@
         </font>
        </property>
        <property name="toolTip">
-        <string>Заполнить и отправить заявку на заселение</string>
+        <string>Заполнить и отправить заявку на заселение.</string>
        </property>
        <property name="text">
         <string>Сделать заявку</string>
