@@ -101,7 +101,7 @@ void MainComendant::on_action_8_triggered()
 {
     //Справка пользователя
     QUrl url;
-    url = QCoreApplication::applicationDirPath() + "/help_user.html";
+    url = QCoreApplication::applicationDirPath() + "/help/help_user.html";
     QDesktopServices temp;
     temp.openUrl(url);
 }
@@ -110,7 +110,7 @@ void MainComendant::on_action_9_triggered()
 {
     //Справка разработчика
     QUrl url;
-    url = QCoreApplication::applicationDirPath() + "/help_developer.html";
+    url = QCoreApplication::applicationDirPath() + "/help/help_developer.html";
     QDesktopServices temp;
     temp.openUrl(url);
 }

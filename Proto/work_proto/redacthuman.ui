@@ -205,6 +205,9 @@
          <height>16777215</height>
         </size>
        </property>
+       <property name="toolTip">
+        <string>Формат даты 2020-01-10</string>
+       </property>
       </widget>
      </item>
     </layout>
