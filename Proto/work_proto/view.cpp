@@ -17,7 +17,10 @@ View::~View()
 void View::set_model(QSqlQueryModel *model)
 {
     ui->tableView->setModel(model);
-void View::setTitle(QString name){
+}
+
+void View::setTitle(QString name)
+{
     QDate cDate = QDate::currentDate();
     ui->state_label->setText("Комендант: Главная->" + name + cDate.toString());
 }

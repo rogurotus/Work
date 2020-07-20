@@ -13,13 +13,13 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
-#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -45,11 +45,11 @@ public:
     QHBoxLayout *horizontalLayout_8;
     QHBoxLayout *horizontalLayout_7;
     QLabel *room_number_label;
-    QSpinBox *spinBox_2;
+    QComboBox *room_combobox;
     QHBoxLayout *horizontalLayout_9;
     QHBoxLayout *horizontalLayout_6;
     QLabel *building_number_label;
-    QSpinBox *spinBox;
+    QComboBox *building_combobox;
     QSpacerItem *verticalSpacer_3;
     QHBoxLayout *horizontalLayout_3;
     QLabel *phine_label;
@@ -168,12 +168,10 @@ public:
 
         horizontalLayout_8->addLayout(horizontalLayout_7);
 
-        spinBox_2 = new QSpinBox(RedactHuman);
-        spinBox_2->setObjectName(QStringLiteral("spinBox_2"));
-        spinBox_2->setMinimumSize(QSize(100, 0));
-        spinBox_2->setMaximumSize(QSize(999, 16777215));
+        room_combobox = new QComboBox(RedactHuman);
+        room_combobox->setObjectName(QStringLiteral("room_combobox"));
 
-        horizontalLayout_8->addWidget(spinBox_2);
+        horizontalLayout_8->addWidget(room_combobox);
 
 
         verticalLayout->addLayout(horizontalLayout_8);
@@ -193,12 +191,10 @@ public:
 
         horizontalLayout_9->addLayout(horizontalLayout_6);
 
-        spinBox = new QSpinBox(RedactHuman);
-        spinBox->setObjectName(QStringLiteral("spinBox"));
-        spinBox->setMinimumSize(QSize(100, 0));
-        spinBox->setMaximumSize(QSize(999, 16777215));
+        building_combobox = new QComboBox(RedactHuman);
+        building_combobox->setObjectName(QStringLiteral("building_combobox"));
 
-        horizontalLayout_9->addWidget(spinBox);
+        horizontalLayout_9->addWidget(building_combobox);
 
 
         verticalLayout->addLayout(horizontalLayout_9);

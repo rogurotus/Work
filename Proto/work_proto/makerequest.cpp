@@ -4,6 +4,7 @@
 #include <QMessageBox>
 #include <QRegExp>
 #include <QRegExpValidator>
+#include <qsqlquery.h>
 
 MakeRequest::MakeRequest(QWidget *parent) :
     QWidget(parent),
@@ -46,6 +47,9 @@ void MakeRequest::on_pushButton_clicked()
         if(ui->phone_edit->text().length() == 17 && isMail(ui->mail_edit->text()))
         {
             //Запись в бд
+            /*QSqlQuery q(QString("insert into citizen (surname, name, patronymic, status, position, telephone, mail) "
+                                "values ('%1', '%2', '%3', %4, '%5', '%6', '%7')").arg(
+                                ));*/
             QMessageBox::information(NULL,QObject::tr("Уведомление"),tr("Заявка отправлена!"));
             this->close();
         }

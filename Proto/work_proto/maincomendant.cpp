@@ -58,7 +58,7 @@ void MainComendant::on_action_triggered()
     manageDatabase = new ManageDatabase;
     QSqlQueryModel* model = new QSqlQueryModel(manageDatabase);
     QSqlQuery *q = new QSqlQuery(QString(
-                " select building.id as корпус, room.name as \"номер комнаты\", "
+                " select citizen.id, building.id as корпус, room.name as \"номер комнаты\", "
                 " citizen.surname, citizen.name, citizen.patronymic, "
                 " citizen.status, citizen.position, citizen.in_date, "
                 " citizen.out_date, citizen.telephone, "
@@ -67,7 +67,7 @@ void MainComendant::on_action_triggered()
                 " inner join building on room.building = building.id "
                 " inner join citizen on citizen_room.citizen = citizen.id "
                 " inner join dormitory_building on building.id = dormitory_building.building"
-                " where citizen.in_date < date() and dormitory = %1;").arg(db.login.get_id_dormitory()));
+                " where citizen.in_date < date() and citizen.out_date > date() and dormitory = %1;").arg(db.login.get_id_dormitory()));
     model->setQuery(*q);
     manageDatabase->set_model(model);
     manageDatabase->setWindowTitle("Добавление информации о заселенных лицах");
@@ -78,10 +78,11 @@ void MainComendant::on_action_triggered()
 void MainComendant::on_action_2_triggered()
 {
     //Изменить информацию о выселенных лицах
+    manageDatabase = new ManageDatabase;
     DB db;
     QSqlQueryModel* model = new QSqlQueryModel(manageDatabase);
     QSqlQuery *q = new QSqlQuery(QString(
-                " select building.id as корпус, room.name as \"номер комнаты\", "
+                " select citizen.id, building.id as корпус, room.name as \"номер комнаты\", "
                 " citizen.surname, citizen.name, citizen.patronymic, "
                 " citizen.status, citizen.position, citizen.in_date, "
                 " citizen.out_date, citizen.telephone, "
@@ -93,7 +94,6 @@ void MainComendant::on_action_2_triggered()
                 " where citizen.out_date < date() and dormitory = %1;").arg(db.login.get_id_dormitory()));
     model->setQuery(*q);
     manageDatabase->set_model(model);
-    manageDatabase = new ManageDatabase;
     manageDatabase->setWindowTitle("Изменение информации о выселенных лицах");
     manageDatabase->setTitle("Изменение информации о выселенных лицах ");
     manageDatabase->show();

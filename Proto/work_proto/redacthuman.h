@@ -12,7 +12,7 @@ class RedactHuman : public QWidget
     Q_OBJECT
 
 public:
-    explicit RedactHuman(QWidget *parent = nullptr);
+    explicit RedactHuman(int citizen_id, QWidget *parent = nullptr);
     ~RedactHuman();
 
 signals:
@@ -24,8 +24,12 @@ private slots:
     bool isMail(QString mail);
     bool isData(QString data);
 
+
+    void on_building_combobox_currentIndexChanged(int index);
+
 private:
     Ui::RedactHuman *ui;
+    int citizen_id;
 };
 
 #endif // REDACTHUMAN_H

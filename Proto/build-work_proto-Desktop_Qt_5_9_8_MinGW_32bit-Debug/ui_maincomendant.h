@@ -38,6 +38,8 @@ public:
     QAction *action_5;
     QAction *action_6;
     QAction *action_7;
+    QAction *action_8;
+    QAction *action_9;
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout_3;
     QHBoxLayout *horizontalLayout;
@@ -65,6 +67,7 @@ public:
     QMenu *menu;
     QMenu *menu_2;
     QMenu *menu_3;
+    QMenu *menu_4;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainComendant)
@@ -86,6 +89,10 @@ public:
         action_6->setObjectName(QStringLiteral("action_6"));
         action_7 = new QAction(MainComendant);
         action_7->setObjectName(QStringLiteral("action_7"));
+        action_8 = new QAction(MainComendant);
+        action_8->setObjectName(QStringLiteral("action_8"));
+        action_9 = new QAction(MainComendant);
+        action_9->setObjectName(QStringLiteral("action_9"));
         centralwidget = new QWidget(MainComendant);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         verticalLayout_3 = new QVBoxLayout(centralwidget);
@@ -221,6 +228,8 @@ public:
         menu_2->setObjectName(QStringLiteral("menu_2"));
         menu_3 = new QMenu(menubar);
         menu_3->setObjectName(QStringLiteral("menu_3"));
+        menu_4 = new QMenu(menubar);
+        menu_4->setObjectName(QStringLiteral("menu_4"));
         MainComendant->setMenuBar(menubar);
         statusbar = new QStatusBar(MainComendant);
         statusbar->setObjectName(QStringLiteral("statusbar"));
@@ -229,6 +238,7 @@ public:
         menubar->addAction(menu->menuAction());
         menubar->addAction(menu_2->menuAction());
         menubar->addAction(menu_3->menuAction());
+        menubar->addAction(menu_4->menuAction());
         menu->addAction(action);
         menu->addAction(action_2);
         menu_2->addAction(action_3);
@@ -236,6 +246,8 @@ public:
         menu_2->addAction(action_5);
         menu_2->addAction(action_6);
         menu_3->addAction(action_7);
+        menu_4->addAction(action_8);
+        menu_4->addAction(action_9);
 
         retranslateUi(MainComendant);
 
@@ -252,6 +264,8 @@ public:
         action_5->setText(QApplication::translate("MainComendant", "\320\237\320\276\320\273\321\203\321\207\320\270\321\202\321\214 \320\270\320\275\321\204\320\276\321\200\320\274\320\260\321\206\320\270\321\216 \320\276 \320\272\320\276\320\274\320\275\320\260\321\202\320\265", Q_NULLPTR));
         action_6->setText(QApplication::translate("MainComendant", "\320\237\320\276\320\273\321\203\321\207\320\270\321\202\321\214 \321\201\320\277\320\270\321\201\320\276\320\272 \320\277\321\200\320\276\320\266\320\270\320\262\320\260\321\216\321\211\320\270\321\205", Q_NULLPTR));
         action_7->setText(QApplication::translate("MainComendant", "\320\237\320\276\320\273\321\203\321\207\320\270\321\202\321\214 \321\201\320\277\320\270\321\201\320\276\320\272 \320\267\320\260\321\217\320\262\320\276\320\272", Q_NULLPTR));
+        action_8->setText(QApplication::translate("MainComendant", "\320\241\320\277\321\200\320\260\320\262\320\272\320\260 \320\277\320\276\320\273\321\214\320\267\320\276\320\262\320\260\321\202\320\265\320\273\321\217", Q_NULLPTR));
+        action_9->setText(QApplication::translate("MainComendant", "\320\241\320\277\321\200\320\260\320\262\320\272\320\260 \321\200\320\260\320\267\321\200\320\260\320\261\320\276\321\202\321\207\320\270\320\272\320\260", Q_NULLPTR));
         dormitory_groupbox->setTitle(QApplication::translate("MainComendant", "\320\236\320\261\321\211\320\265\320\266\320\270\321\202\320\270\320\265 \342\204\226 0", Q_NULLPTR));
         address_label->setText(QApplication::translate("MainComendant", "\320\220\320\264\321\200\320\265\321\201:", Q_NULLPTR));
         comendant_label->setText(QApplication::translate("MainComendant", "\320\232\320\276\320\274\320\265\320\275\320\264\320\260\320\275\321\202: ", Q_NULLPTR));
@@ -266,6 +280,7 @@ public:
         menu->setTitle(QApplication::translate("MainComendant", "\320\243\320\277\321\200\320\260\320\262\320\273\320\265\320\275\320\270\320\265 \320\276\320\261\321\211\320\265\320\266\320\270\321\202\320\270\320\265\320\274", Q_NULLPTR));
         menu_2->setTitle(QApplication::translate("MainComendant", "\320\224\320\260\320\275\320\275\321\213\320\265", Q_NULLPTR));
         menu_3->setTitle(QApplication::translate("MainComendant", "\320\227\320\260\321\217\320\262\320\272\320\270", Q_NULLPTR));
+        menu_4->setTitle(QApplication::translate("MainComendant", "\320\241\320\277\321\200\320\260\320\262\320\272\320\260", Q_NULLPTR));
     } // retranslateUi
 
 };

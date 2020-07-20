@@ -1,6 +1,8 @@
 #include "seekbyname.h"
 #include "ui_seekbyname.h"
 #include <QDate>
+#include "db.h"
+#include <QDebug>
 
 SeekByName::SeekByName(QWidget *parent) :
     QWidget(parent),
