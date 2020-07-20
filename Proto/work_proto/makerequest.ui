@@ -54,7 +54,11 @@
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="patronymic_edit"/>
+    <widget class="QLineEdit" name="patronymic_edit">
+     <property name="toolTip">
+      <string>Необязательное поле.</string>
+     </property>
+    </widget>
    </item>
    <item>
     <widget class="QGroupBox" name="status_groupbox">

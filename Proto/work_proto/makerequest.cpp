@@ -43,8 +43,8 @@ void MakeRequest::on_pushButton_clicked()
             ui->mail_edit->text().length() != 0 &&
             ui->group_work_edit->text().length() != 0)
     {
-
-        if(ui->phone_edit->text().length() == 17 && isMail(ui->mail_edit->text()))
+        QRegExp reg = QRegExp("^[A-Za-z0-9_]{1,100}[@]{1}[A-Za-z0-9_]{1,100}[\\.]{1}[A-Za-z0-9_]{1,100}$");
+        if(ui->phone_edit->text().length() == 17 && reg.exactMatch(ui->mail_edit->text()))
         {
             //Запись в бд
             /*QSqlQuery q(QString("insert into citizen (surname, name, patronymic, status, position, telephone, mail) "
@@ -62,38 +62,4 @@ void MakeRequest::on_pushButton_clicked()
     {
         QMessageBox::information(NULL,QObject::tr("Важно!"),tr("Пожалуйста, укажите все данные!"));
     }
-}
-
-bool MakeRequest::isMail(QString mail){
-    bool Flet, Odog, notDot, Odot, lastCh;
-
-    if (mail[0] != "." && mail[0] != "@")
-        Flet = true;
-    else
-        Flet = false;
-
-    if(mail.count("@") == 1)
-        Odog = true;
-    else
-        Odog = false;
-
-    if(mail[mail.indexOf("@") + 1] != ".")
-        notDot = true;
-    else
-        notDot = false;
-
-    if(mail.count(".") == 1 && (mail.indexOf(".") > mail.indexOf("@")))
-        Odot = true;
-    else
-        Odot = false;
-
-    if(mail.indexOf(".") < mail.length() - 1)
-        lastCh = true;
-    else
-        lastCh = false;
-
-    if(Flet && Odog && notDot && Odot && lastCh)
-        return true;
-    else
-        return false;
 }

@@ -95,12 +95,16 @@
       </font>
      </property>
      <property name="text">
-      <string>Введите отчество коменданта</string>
+      <string>Введите отчество коменданта (необязательное поле)</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="patronymic_edit"/>
+    <widget class="QLineEdit" name="patronymic_edit">
+     <property name="toolTip">
+      <string>Необязательное для заполнения поле.</string>
+     </property>
+    </widget>
    </item>
    <item>
     <spacer name="verticalSpacer">
@@ -258,6 +262,9 @@
          <pointsize>10</pointsize>
         </font>
        </property>
+       <property name="toolTip">
+        <string>Принять изменения.</string>
+       </property>
        <property name="text">
         <string>Ок</string>
        </property>
@@ -282,6 +289,9 @@
         <font>
          <pointsize>10</pointsize>
         </font>
+       </property>
+       <property name="toolTip">
+        <string>Не принимать изменения.</string>
        </property>
        <property name="text">
         <string>Отмена</string>

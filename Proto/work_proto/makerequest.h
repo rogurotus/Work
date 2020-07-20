@@ -17,7 +17,6 @@ public:
 
 private slots:
     void on_pushButton_clicked();
-    bool isMail(QString mail);
 
 private:
     Ui::MakeRequest *ui;

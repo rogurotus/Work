@@ -50,6 +50,9 @@
      </item>
      <item>
       <widget class="QPushButton" name="redact_button">
+       <property name="toolTip">
+        <string>Редактировать данные о лице.</string>
+       </property>
        <property name="text">
         <string>Редактировать</string>
        </property>

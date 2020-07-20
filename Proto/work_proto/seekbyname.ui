@@ -39,6 +39,9 @@
            <height>0</height>
           </size>
          </property>
+         <property name="toolTip">
+          <string>Поиск по фамилии.</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -85,6 +88,9 @@
            <height>0</height>
           </size>
          </property>
+         <property name="toolTip">
+          <string>Поиск по имени.</string>
+         </property>
         </widget>
        </item>
       </layout>
@@ -121,7 +127,11 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="patronymic_edit"/>
+        <widget class="QLineEdit" name="patronymic_edit">
+         <property name="toolTip">
+          <string>Поиск по отчеству.</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
@@ -160,6 +170,9 @@
      </item>
      <item>
       <widget class="QPushButton" name="Enter_FIO">
+       <property name="toolTip">
+        <string>Искать по заполненным полям.</string>
+       </property>
        <property name="text">
         <string>Ок</string>
        </property>
