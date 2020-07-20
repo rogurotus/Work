@@ -11,8 +11,11 @@ Requests::Requests(QWidget *parent) :
     ui->setupUi(this);
     QSqlQueryModel* model = new QSqlQueryModel(this);
     QSqlQuery *q = new QSqlQuery(
-                " select *"
-                " from citizen where in_date is null and out_date is null;");
+                                                         "select "
+                                                         "citizen.surname as 'фамилия', citizen.name as 'имя', citizen.patronymic as 'отчество', "
+                                                         "citizen.status as 'статус', citizen.position as 'должность', "
+                                                         "citizen.telephone  as 'телефон', "
+                                                         "citizen.mail  as 'почта' from citizen where in_date is null and out_date is null;");
 
     model->setQuery(*q);
     ui->tableView->setModel(model);

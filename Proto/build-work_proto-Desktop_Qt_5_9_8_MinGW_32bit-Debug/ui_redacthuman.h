@@ -29,8 +29,8 @@ class Ui_RedactHuman
 {
 public:
     QVBoxLayout *verticalLayout;
-    QLabel *name_label;
     QLabel *surname_label;
+    QLabel *name_label;
     QLabel *patronymic_label;
     QSpacerItem *verticalSpacer_6;
     QHBoxLayout *horizontalLayout_5;
@@ -42,14 +42,14 @@ public:
     QLabel *data_out_label;
     QLineEdit *data_out_edit;
     QSpacerItem *verticalSpacer_4;
-    QHBoxLayout *horizontalLayout_8;
-    QHBoxLayout *horizontalLayout_7;
-    QLabel *room_number_label;
-    QComboBox *room_combobox;
     QHBoxLayout *horizontalLayout_9;
     QHBoxLayout *horizontalLayout_6;
     QLabel *building_number_label;
     QComboBox *building_combobox;
+    QHBoxLayout *horizontalLayout_8;
+    QHBoxLayout *horizontalLayout_7;
+    QLabel *room_number_label;
+    QComboBox *room_combobox;
     QSpacerItem *verticalSpacer_3;
     QHBoxLayout *horizontalLayout_3;
     QLabel *phine_label;
@@ -73,19 +73,19 @@ public:
         RedactHuman->setMaximumSize(QSize(400, 420));
         verticalLayout = new QVBoxLayout(RedactHuman);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        name_label = new QLabel(RedactHuman);
-        name_label->setObjectName(QStringLiteral("name_label"));
-        QFont font;
-        font.setPointSize(12);
-        name_label->setFont(font);
-
-        verticalLayout->addWidget(name_label);
-
         surname_label = new QLabel(RedactHuman);
         surname_label->setObjectName(QStringLiteral("surname_label"));
+        QFont font;
+        font.setPointSize(12);
         surname_label->setFont(font);
 
         verticalLayout->addWidget(surname_label);
+
+        name_label = new QLabel(RedactHuman);
+        name_label->setObjectName(QStringLiteral("name_label"));
+        name_label->setFont(font);
+
+        verticalLayout->addWidget(name_label);
 
         patronymic_label = new QLabel(RedactHuman);
         patronymic_label->setObjectName(QStringLiteral("patronymic_label"));
@@ -153,29 +153,6 @@ public:
 
         verticalLayout->addItem(verticalSpacer_4);
 
-        horizontalLayout_8 = new QHBoxLayout();
-        horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
-        horizontalLayout_7 = new QHBoxLayout();
-        horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
-        room_number_label = new QLabel(RedactHuman);
-        room_number_label->setObjectName(QStringLiteral("room_number_label"));
-        room_number_label->setMinimumSize(QSize(150, 0));
-        room_number_label->setMaximumSize(QSize(150, 16777215));
-        room_number_label->setFont(font);
-
-        horizontalLayout_7->addWidget(room_number_label);
-
-
-        horizontalLayout_8->addLayout(horizontalLayout_7);
-
-        room_combobox = new QComboBox(RedactHuman);
-        room_combobox->setObjectName(QStringLiteral("room_combobox"));
-
-        horizontalLayout_8->addWidget(room_combobox);
-
-
-        verticalLayout->addLayout(horizontalLayout_8);
-
         horizontalLayout_9 = new QHBoxLayout();
         horizontalLayout_9->setObjectName(QStringLiteral("horizontalLayout_9"));
         horizontalLayout_6 = new QHBoxLayout();
@@ -198,6 +175,29 @@ public:
 
 
         verticalLayout->addLayout(horizontalLayout_9);
+
+        horizontalLayout_8 = new QHBoxLayout();
+        horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
+        horizontalLayout_7 = new QHBoxLayout();
+        horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
+        room_number_label = new QLabel(RedactHuman);
+        room_number_label->setObjectName(QStringLiteral("room_number_label"));
+        room_number_label->setMinimumSize(QSize(150, 0));
+        room_number_label->setMaximumSize(QSize(150, 16777215));
+        room_number_label->setFont(font);
+
+        horizontalLayout_7->addWidget(room_number_label);
+
+
+        horizontalLayout_8->addLayout(horizontalLayout_7);
+
+        room_combobox = new QComboBox(RedactHuman);
+        room_combobox->setObjectName(QStringLiteral("room_combobox"));
+
+        horizontalLayout_8->addWidget(room_combobox);
+
+
+        verticalLayout->addLayout(horizontalLayout_8);
 
         verticalSpacer_3 = new QSpacerItem(20, 10, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
@@ -278,16 +278,22 @@ public:
     void retranslateUi(QWidget *RedactHuman)
     {
         RedactHuman->setWindowTitle(QApplication::translate("RedactHuman", "\320\240\320\265\320\264\320\260\320\272\321\202\320\270\321\200\320\276\320\262\320\260\320\275\320\270\320\265 \320\264\320\260\320\275\320\275\321\213\320\265", Q_NULLPTR));
-        name_label->setText(QApplication::translate("RedactHuman", "\320\230\320\274\321\217", Q_NULLPTR));
         surname_label->setText(QApplication::translate("RedactHuman", "\320\244\320\260\320\274\320\270\320\273\320\270\321\217", Q_NULLPTR));
+        name_label->setText(QApplication::translate("RedactHuman", "\320\230\320\274\321\217", Q_NULLPTR));
         patronymic_label->setText(QApplication::translate("RedactHuman", "\320\236\321\202\321\207\320\265\321\201\321\202\320\262\320\276", Q_NULLPTR));
         status_label->setText(QApplication::translate("RedactHuman", "\320\241\321\202\320\260\321\202\321\203\321\201", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        status_edit->setToolTip(QApplication::translate("RedactHuman", "\320\243\320\272\320\260\320\266\320\270\321\202\320\265 \320\264\320\276\320\273\320\266\320\275\320\276\321\201\321\202\321\214 \320\270\320\273\320\270 \320\263\321\200\321\203\320\277\320\277\321\203.", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
         data_in_label->setText(QApplication::translate("RedactHuman", "\320\224\320\260\321\202\320\260 \320\267\320\260\321\201\320\265\320\273\320\265\320\275\320\270\321\217", Q_NULLPTR));
         data_out_label->setText(QApplication::translate("RedactHuman", "\320\224\320\260\321\202\320\260 \320\262\321\213\321\201\320\265\320\273\320\265\320\275\320\270\321\217", Q_NULLPTR));
-        room_number_label->setText(QApplication::translate("RedactHuman", "\320\235\320\276\320\274\320\265\321\200 \320\272\320\276\320\274\320\275\320\260\321\202\321\213", Q_NULLPTR));
         building_number_label->setText(QApplication::translate("RedactHuman", "\320\235\320\276\320\274\320\265\321\200 \320\272\320\276\321\200\320\277\321\203\321\201\320\260", Q_NULLPTR));
+        room_number_label->setText(QApplication::translate("RedactHuman", "\320\235\320\276\320\274\320\265\321\200 \320\272\320\276\320\274\320\275\320\260\321\202\321\213", Q_NULLPTR));
         phine_label->setText(QApplication::translate("RedactHuman", "\320\235\320\276\320\274\320\265\321\200 \321\202\320\265\320\273\320\265\321\204\320\276\320\275\320\260", Q_NULLPTR));
         mail_label->setText(QApplication::translate("RedactHuman", "\320\255\320\273\320\265\320\272\321\202\321\200\320\276\320\275\320\275\320\260\321\217 \320\277\320\276\321\207\321\202\320\260", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        redacted->setToolTip(QApplication::translate("RedactHuman", "\320\240\320\265\320\264\320\260\320\272\321\202\320\270\321\200\320\276\320\262\320\260\321\202\321\214 \320\264\320\260\320\275\320\275\321\213\320\265.", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
         redacted->setText(QApplication::translate("RedactHuman", "\320\240\320\265\320\264\320\260\320\272\321\202\320\270\321\200\320\276\320\262\320\260\321\202\321\214", Q_NULLPTR));
     } // retranslateUi
 

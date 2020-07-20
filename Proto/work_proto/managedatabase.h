@@ -14,7 +14,7 @@ class ManageDatabase : public QWidget
     Q_OBJECT
 
 public:
-    explicit ManageDatabase(QWidget *parent = nullptr);
+    explicit ManageDatabase(bool old, QWidget *parent = nullptr);
     ~ManageDatabase();
     void set_model(QSqlQueryModel* model);
 
@@ -29,6 +29,7 @@ private:
     Ui::ManageDatabase *ui;
     QSqlQueryModel *model;
     RedactHuman * redactHuman;
+    bool old;
 };
 
 #endif // MANAGEDATABASE_H

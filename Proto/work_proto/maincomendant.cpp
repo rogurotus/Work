@@ -34,14 +34,14 @@ MainComendant::MainComendant(QWidget *parent) :
     build.next();
     build_id_first = build.value(0).toInt();
     ui->building_1_label->setText("Корпус №" + QString::number(build_id_first));
-    ui->room_amount_1_label->setText("Всего комнат " + QString::number(build.value(1).toInt()));
-    ui->place_amount_1_label->setText("Мест в комнате " + QString::number(build.value(2).toInt()));
+    ui->room_amount_1_label->setText("Всего комнат: " + QString::number(build.value(1).toInt()));
+    ui->place_amount_1_label->setText("Мест в комнате: " + QString::number(build.value(2).toInt()));
 
     build.next();
     build_id_second = build.value(0).toInt();
     ui->building_2_label->setText("Корпус №" + QString::number(build_id_second));
-    ui->room_amount_2_label->setText("Всего комнат " + QString::number(build.value(1).toInt()));
-    ui->place_amount_2_label->setText("Мест в комнате " + QString::number(build.value(2).toInt()));
+    ui->room_amount_2_label->setText("Всего комнат: " + QString::number(build.value(1).toInt()));
+    ui->place_amount_2_label->setText("Мест в комнате: " + QString::number(build.value(2).toInt()));
 
     ui->dormitory_groupbox->setTitle(QString("Общежитие №%1").arg(QString::number(db.login.get_id_dormitory())));
 }
@@ -55,19 +55,19 @@ void MainComendant::on_action_triggered()
 {
     DB db;
     //Добавить информацию о заселенных лицах
-    manageDatabase = new ManageDatabase;
+    manageDatabase = new ManageDatabase(false);
     QSqlQueryModel* model = new QSqlQueryModel(manageDatabase);
     QSqlQuery *q = new QSqlQuery(QString(
-                " select citizen.id, building.id as корпус, room.name as \"номер комнаты\", "
-                " citizen.surname, citizen.name, citizen.patronymic, "
-                " citizen.status, citizen.position, citizen.in_date, "
-                " citizen.out_date, citizen.telephone, "
-                " citizen.mail from citizen_room "
-                " inner join room on room.number = citizen_room.number "
-                " inner join building on room.building = building.id "
-                " inner join citizen on citizen_room.citizen = citizen.id "
-                " inner join dormitory_building on building.id = dormitory_building.building"
-                " where citizen.in_date < date() and citizen.out_date > date() and dormitory = %1;").arg(db.login.get_id_dormitory()));
+                                     " select citizen.id, building.id as корпус, room.name as \"номер комнаты\", "
+                                     " citizen.surname as 'фамилия', citizen.name as 'имя', citizen.patronymic as 'отчество', "
+                                     " citizen.status as 'статус', citizen.position as 'должность', citizen.in_date as 'дата вселения', "
+                                     " citizen.out_date as 'дата выселения', citizen.telephone as 'телефон', "
+                                     " citizen.mail as 'почта' from citizen_room "
+                                     " inner join room on room.number = citizen_room.number "
+                                     " inner join building on room.building = building.id "
+                                     " inner join citizen on citizen_room.citizen = citizen.id "
+                                     " inner join dormitory_building on building.id = dormitory_building.building "
+                                     " where citizen.in_date < date() and citizen.out_date > date() and dormitory = %1;").arg(db.login.get_id_dormitory()));
     model->setQuery(*q);
     manageDatabase->set_model(model);
     manageDatabase->setWindowTitle("Добавление информации о заселенных лицах");
@@ -78,20 +78,20 @@ void MainComendant::on_action_triggered()
 void MainComendant::on_action_2_triggered()
 {
     //Изменить информацию о выселенных лицах
-    manageDatabase = new ManageDatabase;
+    manageDatabase = new ManageDatabase(true);
     DB db;
     QSqlQueryModel* model = new QSqlQueryModel(manageDatabase);
     QSqlQuery *q = new QSqlQuery(QString(
-                " select citizen.id, building.id as корпус, room.name as \"номер комнаты\", "
-                " citizen.surname, citizen.name, citizen.patronymic, "
-                " citizen.status, citizen.position, citizen.in_date, "
-                " citizen.out_date, citizen.telephone, "
-                " citizen.mail from citizen_room "
-                " inner join room on room.number = citizen_room.number "
-                " inner join building on room.building = building.id "
-                " inner join citizen on citizen_room.citizen = citizen.id "
-                " inner join dormitory_building on building.id = dormitory_building.building"
-                " where citizen.out_date < date() and dormitory = %1;").arg(db.login.get_id_dormitory()));
+                                     " select citizen.id, building.id as корпус, room.name as \"номер комнаты\", "
+                                     " citizen.surname as 'фамилия', citizen.name as 'имя', citizen.patronymic as 'отчество', "
+                                     " citizen.status as 'статус', citizen.position as 'должность', citizen.in_date as 'дата вселения', "
+                                     " citizen.out_date as 'дата выселения', citizen.telephone as 'телефон', "
+                                     " citizen.mail as 'почта' from citizen_room "
+                                     " inner join room on room.number = citizen_room.number "
+                                     " inner join building on room.building = building.id "
+                                     " inner join citizen on citizen_room.citizen = citizen.id "
+                                     " inner join dormitory_building on building.id = dormitory_building.building "
+                                     " where citizen.out_date < date() and dormitory = %1;").arg(db.login.get_id_dormitory()));
     model->setQuery(*q);
     manageDatabase->set_model(model);
     manageDatabase->setWindowTitle("Изменение информации о выселенных лицах");
@@ -106,56 +106,44 @@ void MainComendant::on_action_3_triggered()
     view = new View;
     QSqlQueryModel* model = new QSqlQueryModel(view);
 
-    QSqlQuery *q = new QSqlQuery(QString("select id_b as \"корпус\", name as \"номер комнаты\", places_n as \"мест свободно\" from "
-                                         "(select id_b, name, (building.place_in_room - places) as places_n "
-                                         "from(  "
-                                         "select id_b, name, places from (  "
-                                         "select building.id as id_b, room.name, room.number "
+    QSqlQuery *q = new QSqlQuery(QString("select id as \"корпус\", name as \"номер комнаты\", places as \"мест свободно\" from "
+                                         "(select id, name, t1.number, places from ( "
+                                         "select building.id, room.name, room.number "
                                          "from citizen_room "
-                                         "inner join room on room.number = citizen_room.number  "
-                                         "inner join building on room.building = building.id "
-                                         "inner join citizen on citizen_room.citizen = citizen.id "
-                                         "where id_b in (  "
-                                         "select building from dormitory_building where dormitory = %1)  "
-                                         "union "
-                                         "select building.id as id_b, room.name, room.number "
-                                         "from citizen_room "
-                                         "inner join room on room.number = citizen_room.number  "
-                                         "inner join building on room.building = building.id "
-                                         "inner join citizen on citizen_room.citizen = citizen.id "
-                                         "where id_b in ( "
-                                         "select building from dormitory_building where dormitory = %1) "
-                                         ") t1  "
-                                         "inner join (select count(*) as places, room.number from citizen_room  "
                                          "inner join room on room.number = citizen_room.number "
                                          "inner join building on room.building = building.id "
-                                         "group by citizen_room.number) t2 on t1.number = t2.number) "
-                                         "inner join building on building.id = id_b "
-                                         "where places_n > 0 "
-                                         "union "
-                                         "select building.id as id_b, room.name,  "
-                                         "(building.place_in_room) places_n from room  "
-                                         "inner join building on building = building.id  "
-                                         "where id_b in ( "
-                                         "select building from dormitory_building where dormitory = %1) "
-                                         "except "
-                                         "select building.id as id_b, room.name,  "
-                                         "(building.place_in_room) places_n from citizen_room "
-                                         "inner join room on room.number = citizen_room.number  "
-                                         "inner join building on room.building = building.id "
                                          "inner join citizen on citizen_room.citizen = citizen.id "
-                                         "where building.id in ( "
-                                         "select building from dormitory_building where dormitory = %1) "
-                                         "except "
-                                         "select building.id as id_b, room.number, "
-                                         "(building.place_in_room - (select count(*) from citizen_room "
+                                         "inner join dormitory_building on dormitory_building.building = building.id "
+                                         "where citizen.out_date > date() and citizen.status != 1 and dormitory = %1 "
+                                         "union "
+                                         "select building.id, room.name, room.number "
+                                         "from citizen_room "
                                          "inner join room on room.number = citizen_room.number "
                                          "inner join building on room.building = building.id "
-                                         "group by citizen_room.number)) places_n from citizen_room "
+                                         "inner join citizen on citizen_room.citizen = citizen.id "
+                                         "inner join dormitory_building on dormitory_building.building = building.id "
+                                         "where citizen.out_date > date() and citizen.status != 1 and dormitory = %1 ) t1 "
+                                         "inner join (select (building.place_in_room - count(*)) as places, room.number from citizen_room  "
+                                         "inner join room on room.number = citizen_room.number "
+                                         "inner join building on room.building = building.id "
+                                         "inner join citizen on citizen.id = citizen_room.citizen "
+                                         "inner join dormitory_building on dormitory_building.building = building.id "
+                                         "where citizen.out_date > date() and dormitory = %1 "
+                                         "group by citizen_room.number) t2 on t1.number = t2.number "
+                                         "where places > 0 "
+                                         "union "
+                                         "select room.building, name, number, building.place_in_room as places from room "
+                                         "inner join building on room.building = building.id "
+                                         "inner join dormitory_building on dormitory_building.building = building.id "
+                                         "where dormitory = %1 "
+                                         "except "
+                                         "select building.id as id_b, room.name, room.number, building.place_in_room as places "
+                                         "from citizen_room "
                                          "inner join room on room.number = citizen_room.number "
                                          "inner join building on room.building = id_b "
                                          "inner join citizen on citizen_room.citizen = citizen.id "
-                                         "where citizen.status = 1); ").arg(db.login.get_id_dormitory()));
+                                         "inner join dormitory_building on dormitory_building.building = building.id "
+                                         "where citizen.out_date > date() and dormitory = %1);").arg(db.login.get_id_dormitory()));
 
     model->setQuery(*q);
     view->set_model(model);
@@ -206,9 +194,11 @@ void MainComendant::on_action_6_triggered()
     QSqlQueryModel* model = new QSqlQueryModel(view);
     DB db;
     QSqlQuery *q = new QSqlQuery(QString("select "
-                                         "citizen.surname, citizen.name, citizen.patronymic, "
-                                         "citizen.status, citizen.position, citizen.in_date, citizen.out_date, citizen.telephone, "
-                                         "citizen.mail from citizen_room "
+                                         "citizen.surname as 'фамилия', citizen.name as 'имя', citizen.patronymic as 'отчество', "
+                                         "citizen.status as 'статус', citizen.position as 'должность', "
+                                         "citizen.in_date as 'дата заселения', "
+                                         "citizen.out_date as 'дата выселения', citizen.telephone  as 'телефон', "
+                                         "citizen.mail  as 'почта' from citizen_room "
                                          "inner join room on room.number = citizen_room.number "
                                          "inner join building on room.building = building.id "
                                          "inner join citizen on citizen_room.citizen = citizen.id "

@@ -47,9 +47,13 @@ void MakeRequest::on_pushButton_clicked()
         if(ui->phone_edit->text().length() == 17 && reg.exactMatch(ui->mail_edit->text()))
         {
             //Запись в бд
-            /*QSqlQuery q(QString("insert into citizen (surname, name, patronymic, status, position, telephone, mail) "
+            QSqlQuery q(QString("insert into citizen (surname, name, patronymic, status, position, telephone, mail) "
                                 "values ('%1', '%2', '%3', %4, '%5', '%6', '%7')").arg(
-                                ));*/
+                                ui->surname_edit->text().trimmed(), ui->name_edit->text().trimmed(),
+                                ui->patronymic_edit->text().trimmed(), QString::number(ui->sotrudnik_radio->isChecked()),
+                                ui->group_work_edit->text().trimmed(),
+                                ui->phone_edit->text().trimmed(),
+                                ui->mail_edit->text().trimmed()));
             QMessageBox::information(NULL,QObject::tr("Уведомление"),tr("Заявка отправлена!"));
             this->close();
         }

@@ -84,6 +84,9 @@ public:
     void retranslateUi(QWidget *ManageDatabase)
     {
         ManageDatabase->setWindowTitle(QApplication::translate("ManageDatabase", "Form", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        redact_button->setToolTip(QApplication::translate("ManageDatabase", "\320\240\320\265\320\264\320\260\320\272\321\202\320\270\321\200\320\276\320\262\320\260\321\202\321\214 \320\264\320\260\320\275\320\275\321\213\320\265 \320\276 \320\273\320\270\321\206\320\265.", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
         redact_button->setText(QApplication::translate("ManageDatabase", "\320\240\320\265\320\264\320\260\320\272\321\202\320\270\321\200\320\276\320\262\320\260\321\202\321\214", Q_NULLPTR));
         state_label->setText(QApplication::translate("ManageDatabase", "\320\232\320\276\320\274\320\265\320\275\320\264\320\260\320\275\321\202:", Q_NULLPTR));
     } // retranslateUi

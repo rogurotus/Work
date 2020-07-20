@@ -12,7 +12,7 @@ class RedactHuman : public QWidget
     Q_OBJECT
 
 public:
-    explicit RedactHuman(int citizen_id, QWidget *parent = nullptr);
+    explicit RedactHuman(bool old, int citizen_id, QWidget *parent = nullptr);
     ~RedactHuman();
 
 signals:
@@ -28,6 +28,7 @@ private slots:
 private:
     Ui::RedactHuman *ui;
     int citizen_id;
+    bool old;
 };
 
 #endif // REDACTHUMAN_H
