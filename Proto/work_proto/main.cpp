@@ -1,6 +1,9 @@
 #include "mainwindow.h"
 
 #include <QApplication>
+#include <qsqlquery.h>
+#include <db.h>
+#include <QDebug>
 
 int main(int argc, char *argv[])
 {
