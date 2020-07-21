@@ -1,6 +1,8 @@
 #include "seekbyname.h"
 #include "ui_seekbyname.h"
 #include <QDate>
+#include "db.h"
+#include <QDebug>
 
 SeekByName::SeekByName(QWidget *parent) :
     QWidget(parent),
@@ -23,7 +25,9 @@ SeekByName::~SeekByName()
 
 void SeekByName::on_Enter_FIO_clicked()
 {
-    //Ввод данных
+    auto citizens = Citizen::search(ui->name_edit->text(), ui->surname_edit->text(), ui->patronymic_edit->text());
+    qDebug() << citizens.size();
+    ui->tableView->setModel(Citizen::get_cojitel(citizens, this));
 }
 
 void SeekByName::setTitle(QString name){

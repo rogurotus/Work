@@ -1,6 +1,7 @@
 #ifndef MANAGEDATABASE_H
 #define MANAGEDATABASE_H
 
+#include <QSqlRelationalTableModel>
 #include <QWidget>
 #include <redacthuman.h>
 
@@ -13,8 +14,9 @@ class ManageDatabase : public QWidget
     Q_OBJECT
 
 public:
-    explicit ManageDatabase(QWidget *parent = nullptr);
+    explicit ManageDatabase(bool old, QWidget *parent = nullptr);
     ~ManageDatabase();
+    void set_model(QSqlQueryModel* model);
 
 public slots:
     void update_human(bool);
@@ -25,7 +27,9 @@ private slots:
 
 private:
     Ui::ManageDatabase *ui;
+    QSqlQueryModel *model;
     RedactHuman * redactHuman;
+    bool old;
 };
 
 #endif // MANAGEDATABASE_H

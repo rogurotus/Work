@@ -2,6 +2,7 @@
 #define REQUESTS_H
 
 #include <QWidget>
+#include <QSqlQueryModel>
 
 namespace Ui {
 class Requests;
