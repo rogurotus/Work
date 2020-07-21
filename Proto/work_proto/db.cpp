@@ -11,7 +11,7 @@ DB::DB()
     {
         _db = new QSqlDatabase();
         *_db = QSqlDatabase::addDatabase("QSQLITE");
-        _db->setDatabaseName("..\\work.db");
+        _db->setDatabaseName("C:/InterfacePrototype/Work/Proto/work.db");
         _db->open();
         db = _db;
     }
