@@ -1,3 +1,4 @@
+debug/db.o
 debug/main.o
 debug/maincomendant.o
 debug/mainvisiter.o

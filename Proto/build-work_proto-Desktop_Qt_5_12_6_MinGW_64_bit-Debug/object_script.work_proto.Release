@@ -1,3 +1,4 @@
+release/db.o
 release/main.o
 release/maincomendant.o
 release/mainvisiter.o

@@ -145,4 +145,3 @@ QSqlQueryModel* Citizen::get_cojitel(QList<Citizen> citizens, QWidget* parent) /
     }
     return model;
 }
-

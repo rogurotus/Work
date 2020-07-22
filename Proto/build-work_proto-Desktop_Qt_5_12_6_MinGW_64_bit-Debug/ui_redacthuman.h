@@ -284,6 +284,9 @@ public:
 #endif // QT_NO_TOOLTIP
         data_in_label->setText(QApplication::translate("RedactHuman", "\320\224\320\260\321\202\320\260 \320\267\320\260\321\201\320\265\320\273\320\265\320\275\320\270\321\217", nullptr));
         data_out_label->setText(QApplication::translate("RedactHuman", "\320\224\320\260\321\202\320\260 \320\262\321\213\321\201\320\265\320\273\320\265\320\275\320\270\321\217", nullptr));
+#ifndef QT_NO_TOOLTIP
+        data_out_edit->setToolTip(QApplication::translate("RedactHuman", "\320\244\320\276\321\200\320\274\320\260\321\202 \320\264\320\260\321\202\321\213 2020-01-10", nullptr));
+#endif // QT_NO_TOOLTIP
         building_number_label->setText(QApplication::translate("RedactHuman", "\320\235\320\276\320\274\320\265\321\200 \320\272\320\276\321\200\320\277\321\203\321\201\320\260", nullptr));
         room_number_label->setText(QApplication::translate("RedactHuman", "\320\235\320\276\320\274\320\265\321\200 \320\272\320\276\320\274\320\275\320\260\321\202\321\213", nullptr));
         phine_label->setText(QApplication::translate("RedactHuman", "\320\235\320\276\320\274\320\265\321\200 \321\202\320\265\320\273\320\265\321\204\320\276\320\275\320\260", nullptr));
