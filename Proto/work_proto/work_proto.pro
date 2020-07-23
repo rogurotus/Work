@@ -1,4 +1,5 @@
 QT       += core gui
+QT += sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -16,14 +17,43 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    db.cpp \
     main.cpp \
-    mainwindow.cpp
+    maincomendant.cpp \
+    mainvisiter.cpp \
+    mainwindow.cpp \
+    makerequest.cpp \
+    managedatabase.cpp \
+    redactdata.cpp \
+    redacthuman.cpp \
+    requests.cpp \
+    seekbyname.cpp \
+    view.cpp
 
 HEADERS += \
-    mainwindow.h
+    db.h \
+    maincomendant.h \
+    mainvisiter.h \
+    mainwindow.h \
+    makerequest.h \
+    managedatabase.h \
+    redactdata.h \
+    redacthuman.h \
+    requests.h \
+    seekbyname.h \
+    view.h
 
 FORMS += \
-    mainwindow.ui
+    maincomendant.ui \
+    mainvisiter.ui \
+    mainwindow.ui \
+    makerequest.ui \
+    managedatabase.ui \
+    redactdata.ui \
+    redacthuman.ui \
+    requests.ui \
+    seekbyname.ui \
+    view.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
