@@ -51,8 +51,8 @@ void MainWindow::on_pushButton_clicked()
             {
                 if(Login::check_login_pass(ui->login_edit->text(), ui->password_edit->text()))
                 {
-                    // инициализая db.login
-                    db.login = Login(ui->login_edit->text(), ui->password_edit->text());
+                    DB db2;
+                    db2.login = Login(ui->login_edit->text(), ui->password_edit->text());
                     maincomendant = new MainComendant;
                     maincomendant->show();
                     this->close();

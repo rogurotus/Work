@@ -9,10 +9,21 @@ DB::DB()
 {
     if(!_db)
     {
+        qDebug() << "КАКОГО ХЕРА1";
         _db = new QSqlDatabase();
         *_db = QSqlDatabase::addDatabase("QSQLITE");
-        _db->setDatabaseName("work.db");
+        _db->setDatabaseName("..//work.db");
         _db->open();
+        if(!_db->isOpen())
+        {
+            qDebug() << "КАКОГО ХЕРА2";
+            _db->setDatabaseName("work.db");
+            _db->open();
+        }
+        if(!_db->isOpen())
+        {
+            qDebug() << "КАКОГО ХЕРА3";
+        }
         db = _db;
     }
     else
