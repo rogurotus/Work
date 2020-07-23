@@ -235,6 +235,7 @@ Makefile: ../../InterfacePrototype/Work/Proto/work_proto/work_proto.pro ../../Qt
 		../../InterfacePrototype/Work/Proto/work_proto/work_proto.pro \
 		../../Qt/5.12.6/mingw73_64/lib/Qt5Widgets.prl \
 		../../Qt/5.12.6/mingw73_64/lib/Qt5Gui.prl \
+		../../Qt/5.12.6/mingw73_64/lib/Qt5Sql.prl \
 		../../Qt/5.12.6/mingw73_64/lib/Qt5Core.prl \
 		../../Qt/5.12.6/mingw73_64/lib/qtmain.prl
 	$(QMAKE) -o Makefile ..\..\InterfacePrototype\Work\Proto\work_proto\work_proto.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -410,6 +411,7 @@ Makefile: ../../InterfacePrototype/Work/Proto/work_proto/work_proto.pro ../../Qt
 ../../InterfacePrototype/Work/Proto/work_proto/work_proto.pro:
 ../../Qt/5.12.6/mingw73_64/lib/Qt5Widgets.prl:
 ../../Qt/5.12.6/mingw73_64/lib/Qt5Gui.prl:
+../../Qt/5.12.6/mingw73_64/lib/Qt5Sql.prl:
 ../../Qt/5.12.6/mingw73_64/lib/Qt5Core.prl:
 ../../Qt/5.12.6/mingw73_64/lib/qtmain.prl:
 qmake: FORCE

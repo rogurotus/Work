@@ -1,6 +1,5 @@
 #include "db.h"
 #include <QSqlQuery>
-#include <QDebug>
 
 QSqlDatabase *DB::_db;
 Login DB::login;
@@ -9,20 +8,17 @@ DB::DB()
 {
     if(!_db)
     {
-        qDebug() << "КАКОГО ХЕРА1";
         _db = new QSqlDatabase();
         *_db = QSqlDatabase::addDatabase("QSQLITE");
-        _db->setDatabaseName("..//work.db");
+        _db->setDatabaseName("work.db");
         _db->open();
         if(!_db->isOpen())
         {
-            qDebug() << "КАКОГО ХЕРА2";
             _db->setDatabaseName("work.db");
             _db->open();
         }
         if(!_db->isOpen())
         {
-            qDebug() << "КАКОГО ХЕРА3";
         }
         db = _db;
     }
@@ -112,7 +108,6 @@ QList<Citizen> Citizen::search(QString name, QString surname, QString patronymic
     while(query.next())
     {
         result.push_back(Citizen(query.value(0).toInt()));
-        qDebug() << result.back().surname;
     }
     return result;
 }
@@ -149,11 +144,9 @@ QSqlQueryModel* Citizen::get_cojitel(QList<Citizen> citizens, QWidget* parent) /
                 "where citizen_room.number in (select number from citizen_room "
                 "where citizen in %1) ").arg(set_citizen);
 
-        qDebug() << query;
         query += "order by room.name; ";
         QSqlQuery *q = new QSqlQuery(query);
         model->setQuery(*q);
     }
     return model;
 }
-
